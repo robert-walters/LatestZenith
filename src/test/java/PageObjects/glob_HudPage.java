@@ -14,6 +14,9 @@ public class glob_HudPage extends BasePage{
     @FindBy(xpath = "//*[@data-testid='createCandidate']")
     public WebElement universalPlusIcon_CreateCandidate;
 
+    @FindBy(xpath = "//*[@data-testid='createClient Contact']")
+    public WebElement universalPlusIcon_CreateClientContact;
+
     @FindBy(xpath = "//*[@data-cy='created_candidate_snackbar']")
     public WebElement notification_CreatedCandidate;
 
@@ -75,8 +78,8 @@ public class glob_HudPage extends BasePage{
     @FindBy(xpath = "//a[@data-testid='candidatesListsLink']")
     public WebElement candidateList;
 
-    //a[@data-testid='allClientsLink']
-    @FindBy(xpath = "/html/body/div/div[1]/div[1]/div[3]/div[2]/a[8]")
+
+    @FindBy(xpath = "//a[@data-testid='allClientsLink']")
     public WebElement allClientContacts;
 
 

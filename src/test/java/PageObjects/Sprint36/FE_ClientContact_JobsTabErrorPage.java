@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FE_ClientContact_JobsTabErrorPage extends BasePage {
 
-    @FindBy(xpath = "//h4[contains(text(), 'Lunga')]")
+    @FindBy(xpath = "//h4[contains(text(), 'tax contacts')]")
     @CacheLookup
     public WebElement lnkClientListItem;
 

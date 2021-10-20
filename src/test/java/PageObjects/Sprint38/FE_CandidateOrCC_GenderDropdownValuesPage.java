@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FE_CandidateOrCC_GenderDropdownValuesPage extends BasePage {
 
-    @FindBy(xpath = "//p[contains(text(), 'lungas lungas')]")
+    @FindBy(xpath = "//p[contains(text(), 'LungaTwo LungaTwo')]")
     @CacheLookup
     public WebElement lnkCandidateItem;
 
@@ -17,7 +17,7 @@ public class FE_CandidateOrCC_GenderDropdownValuesPage extends BasePage {
     @CacheLookup
     public WebElement lnkPersonalTab;
 
-    @FindBy(xpath = "/html/body/div/div[1]/div[1]/div[4]/div/div[2]/div/div/div/div[1]/div[1]/div[2]/div/div/div/div[6]/div/button/div/div/div")
+    @FindBy(xpath = "/html/body/div/div/div[1]/div[4]/div/div[3]/div/div/div/div[1]/div[1]/div[2]/div/div/div/div[6]/div/div/div/div")
     @CacheLookup
     public WebElement btnGender;
 

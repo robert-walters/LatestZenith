@@ -15,13 +15,13 @@ public class OrganisationClientContactAddClientToOrganisationPage {
         wait = new WebDriverWait(ldriver,10);
     }
 
-    By lnkClientContacts= By.xpath("//a[@id='scrollable-auto-tab-4']");
+    By lnkClientContacts= By.xpath("//button[@id='scrollable-auto-tab-5']");
 
-    By rdBtnClient= By.xpath("");
+    By rdBtnClient= By.xpath("//span[@data-testid='record-check-all']");
 
     By btnAddTo = By.xpath("//span[contains(text(), 'Add To')]");
 
-    By btnAddToList = By.id("//h6[contains(text(), 'Add to list')]");
+    By btnAddToList = By.xpath("//h6[contains(text(), 'Add to list')]");
 
 
     //###########################################ACTIONS###################################################

@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BEAndFE_Pipeline_EditModals_AddResponsibleUserAndTeam_ShortListPage extends BasePage {
 
-    @FindBy(xpath = "//p[contains(text(), 'LungaAuto')]")
+    @FindBy(xpath = "//p[contains(text(), 'Lunga')]")
     @CacheLookup
     public WebElement lnkJobItem;
 

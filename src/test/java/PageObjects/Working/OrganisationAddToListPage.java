@@ -30,7 +30,7 @@ public class OrganisationAddToListPage {
 
     By btnAddToList = By.xpath("//h6[contains(text(), 'Add to list')]");
 
-    By rbtOrganisation = By.xpath("//h4[contains(text(), 'Bb consulting ')]");
+    By rbtOrganisation = By.xpath("//h4[contains(text(), 'LuListOne')]");
 
     By btnAdd = By.xpath("//button[@data-testid='addToListSubmit']");
 

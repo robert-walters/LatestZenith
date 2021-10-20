@@ -21,7 +21,7 @@ public class FEClientContactCreateActivityActivityModalPage {
 
     By btnScrollableClientContacts= By.id("scrollable-auto-tab-Client Contacts");
 
-    By lnkClient_item= By.xpath("//span[contains(text(), 'Researcher at Lunga • Johannesburg')]");
+    By lnkClient_item= By.xpath("//p[contains(text(), 'LungaTwo LungaTwo')]");
 
     By btnCCPlus= By.xpath("//button[@data-testid='ClientActivities_add_button']");
 

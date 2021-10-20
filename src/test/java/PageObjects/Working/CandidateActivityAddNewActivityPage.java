@@ -24,7 +24,7 @@ public class CandidateActivityAddNewActivityPage {
     By txtSearchField = By.xpath("//input[@type='search']");
 
 
-    By lnkCandidateItem = By.xpath("//p[contains(text(), 'Lunga Lunga')]");
+    By lnkCandidateItem = By.xpath("//p[contains(text(), 'LungaCa LungaCa')]");
 
     By lnkActivity = By.id("scrollable-auto-tab-1");
 

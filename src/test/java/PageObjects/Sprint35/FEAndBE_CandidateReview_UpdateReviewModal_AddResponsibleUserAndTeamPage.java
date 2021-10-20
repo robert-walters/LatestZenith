@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FEAndBE_CandidateReview_UpdateReviewModal_AddResponsibleUserAndTeamPage extends BasePage {
 
-    @FindBy(xpath = "//h6[contains(text(), 'ScrumbleBees')]")
+    @FindBy(xpath = "//h6[contains(text(), 'RW Commerce - Manchester')]")
     @CacheLookup
     public WebElement lnkCandidateReviewListItem;
 
@@ -25,7 +25,7 @@ public class FEAndBE_CandidateReview_UpdateReviewModal_AddResponsibleUserAndTeam
     @CacheLookup
     public WebElement txtResponsibleTeam;
 
-    @FindBy(xpath = "//li[contains(text(), 'Test Users')]")
+    @FindBy(xpath = "//li[@data-testid='9b38e8d7-b1fc-447c-84fc-cf6bd1030cc0']")
     @CacheLookup
     public WebElement txtResponsibleTeam_item;
 

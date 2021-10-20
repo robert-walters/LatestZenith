@@ -13,11 +13,11 @@ public class DialogBox_RetainerOrShortlist_JobInformationTabPage extends BasePag
     @CacheLookup
     public WebElement lnkJobItem;
 
-    @FindBy(id = "scrollable-auto-tab-3")
+    @FindBy(id = "scrollable-auto-tab-2")
     @CacheLookup
     public WebElement lnkInformationTab;
 
-    @FindBy(xpath = "/html/body/div/div/div[1]/div[4]/div/div/div[2]/div/div/div/div[1]/div[2]/div[2]/div/div/div/div[1]/div/button/div/div/div/div")
+    @FindBy(xpath = "/html/body/div/div/div[1]/div[4]/div/div/div[2]/div/div/div/div[1]/div[2]/div[2]/div/div/div/div[1]/div/div/div/div/div/div/span")
     @CacheLookup
     public WebElement txtAgreementType;
 

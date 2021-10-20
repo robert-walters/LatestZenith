@@ -13,7 +13,7 @@ public class BE_Alerts_Candidate_AddAndViewOnRecordPage extends BasePage {
     @CacheLookup
     public WebElement btnAlertType;
 
-    @FindBy(xpath = "//p[contains(text(), 'Lunga Lunga')]")
+    @FindBy(xpath = "//p[contains(text(), 'LungaCa LungaCa')]")
     @CacheLookup
     public WebElement lnkCandidateItem;
 

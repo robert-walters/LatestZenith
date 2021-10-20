@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FEAndBECandidateStatusNotUpdatingOrSettingToCorrectDefaultValuePage extends BasePage {
 
-    @FindBy(xpath = "//h6[contains(text(), 'Lunga Lunga')]")
+    @FindBy(xpath = "//p[contains(text(), 'LungaCa LungaCa')]")
     @CacheLookup
     public WebElement lnkCandidate_item;
 

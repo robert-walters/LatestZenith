@@ -22,7 +22,6 @@ public class FECandidateViewActivityActivityFilterPage {
 
     //###########################################ACTIONS###################################################
 
-
     public void clickBtnFilterActivities() throws Exception{
         Thread.sleep(3000);
         WebDriverWait waiting = new WebDriverWait(ldriver, 15, 100);

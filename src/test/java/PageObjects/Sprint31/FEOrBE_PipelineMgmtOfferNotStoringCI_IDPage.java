@@ -9,6 +9,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FEOrBE_PipelineMgmtOfferNotStoringCI_IDPage extends BasePage {
 
+    @FindBy(xpath = "//p[contains(text(), 'LungaAuto')]")
+    @CacheLookup
+    public WebElement lnkJobItem;
+
     @FindBy(xpath = "//p[contains(text(), 'Offer')]")
     @CacheLookup
     public WebElement lnkOffer;

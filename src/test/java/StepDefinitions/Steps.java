@@ -14,6 +14,9 @@ import PageObjects.Sprint36.FE_ClientContact_JobsTabErrorPage;
 import PageObjects.Sprint36.FE_SearchBarFieldPlusContainerPage;
 import PageObjects.Sprint37.*;
 import PageObjects.Sprint38.*;
+import PageObjects.Sprint39.*;
+import PageObjects.Sprint40.*;
+import PageObjects.Sprint43.*;
 import PageObjects.Working.CreateCandidatesPage;
 import PageObjects.Working.*;
 import io.cucumber.java.After;
@@ -118,6 +121,7 @@ public class Steps {
     public FEPermissionsRoleBasedJobPage prbjp;
     public FECandidateEditActivityLogActivityPage cealap;
     public FE_EditInterviewRounds_SingleOrMulti_AdditionalRoundPage eirsomadp;
+    public FEJob_ViewActivity_Activity_FilterPage fejvafp;
 
     public glob_LoginPage glob_loginPage;
     public glob_HudPage glob_hudPage;
@@ -193,7 +197,39 @@ public class Steps {
     public FE_ImplementStandardAndValidationOnPhoneNumberInputPage fe_implementStandardAndValidationOnPhoneNumberInputPage;
     public FE_CandidateOrCC_GenderDropdownValuesPage fe_candidateOrCC_genderDropdownValuesPage;
     public FE_MyJobsList_StatusDropdownPage fe_myJobsList_statusDropdownPage;
-
+    public FE_ClientContact_SearchForAClientContactRecordByPhoneNumberPage fe_clientContact_searchForAClientContactRecordByPhoneNumberPage;
+    public FE_Candidate_SearchForACandidateByPhoneNumberPage fe_candidate_searchForACandidateByPhoneNumberPage;
+    public FE_Candidate_WhenSelecting_SetAsOrgOnly_Option_SystemErrorPage fe_candidate_whenSelecting_setAsOrgOnly_option_systemErrorPage;
+    public FE_CHANGE_ActivityLog_CCFieldPage fe_change_activityLog_ccFieldPage;
+    public FE_CandidateLibrary_ShowLastContactedPage fe_candidateLibrary_showLastContactedPage;
+    public FE_CHANGE_ActivityLogJobField_OrgPage fe_change_activityLogJobField_orgPage;
+    public FE_CHANGE_ActivityLogJobField_CandidatePage fe_change_activityLogJobField_candidatePage;
+    public FE_CHANGE_ActivityLogJobField_ClientContactPage fe_change_activityLogJobField_clientContactPage;
+    public FE_CandidateTeamListAndPipelineStages_Rename_CurrentRole_ColumnPage fe_candidateTeamListAndPipelineStages_rename_currentRole_columnPage;
+    public FE_CandidateRoleAddOrEditModal_JobTitleRequiredFieldPage fe_candidateRoleAddOrEditModal_jobTitleRequiredFieldPage;
+    public FE_CandidateGenderDropdown_AllowUserToClearFieldBySelecting_NonePage fe_candidateGenderDropdown_allowUserToClearFieldBySelecting_nonePage;
+    public FE_JobRearchResults_AddMissingFieldRateTypePage fe_jobRearchResults_addMissingFieldRateTypePage;
+    public FE_Job_ChangeMainClientContactPage fe_job_changeMainClientContactPage;
+    public FE_SearchBar_KeepDropdownAndSameTabOpenWhenAddingInputAfterFirstQueryPage fe_searchBar_keepDropdownAndSameTabOpenWhenAddingInputAfterFirstQueryPage;
+    public FE_PhoneNumberField_ShowValidationMessageUnderEachContactFieldInTheFormPage fe_phoneNumberField_showValidationMessageUnderEachContactFieldInTheFormPage;
+    public FE_SearchResultsPage_ViewAllJobResultsInListViewPage fe_searchResultsPage_viewAllJobResultsInListViewPage;
+    public CLONE_FE_MyJobsList_StatusDropdownPage clone_fe_myJobsList_statusDropdownPage;
+    public EditingDocumentMetaData_CandidateCVDocumentsPage editingDocumentMetaData_candidateCVDocumentsPage;
+    public DownloadingDocument_CandidatePage downloadingDocument_candidatePage;
+    public FE_JobRecord_ReplaceLastActivityDateWithLastContactedDatePage fe_jobRecord_replaceLastActivityDateWithLastContactedDatePage;
+    public FE_QuickCreateMenu_CloseOptionsOnClickAwayPage fe_quickCreateMenu_closeOptionsOnClickAwayPage;
+    public FE_JobRecord_MyJobsEmptyStateDisplaying_Zero_NextToMessagePage fe_jobRecord_myJobsEmptyStateDisplaying_zero_nextToMessagePage;
+    public FE_ClientContact_CreateFormFields_SetPrimaryContactPage fe_clientContact_createFormFields_setPrimaryContactPage;
+    public FE_CandidateContactDetails_Inlinefield_RemovingPrimaryContactPage fe_candidateContactDetails_inlinefield_removingPrimaryContactPage;
+    public FE_ClientContact_AddOrEditRole_Display_AddAndEditPrimaryContactPage fe_clientContact_addOrEditRole_display_addAndEditPrimaryContactPage;
+    public CLONE_FE_CHANGE_ActivityLogJobFieldPage clone_fe_change_activityLogJobFieldPage;
+    public FE_ClientContactCreate_GenderDropdownValuesPage fe_clientContactCreate_genderDropdownValuesPage;
+    public FE_Organisation_AddSubsidiaryOrganisationError_AmendErrorMessagePage fe_organisation_addSubsidiaryOrganisationError_amendErrorMessagePage;
+    public FE_Pagination_ImplementPaginationForClientContactLibraryPage fe_pagination_implementPaginationForClientContactLibraryPage;
+    public FE_ClientContact_CreateActivityEventFilterComponentInStorybookPage fe_clientContact_createActivityEventFilterComponentInStorybookPage;
+    public FE_JobKeyDetails_UpdateKeyDetailsFormNotSendingOrganisation_IdInvalidRequestPage fe_jobKeyDetails_updateKeyDetailsFormNotSendingOrganisation_idInvalidRequestPage;
+    public FOJ_AddNewRoleModal_FOJTabPage foj_addNewRoleModal_fojTabPage;
+    public FOJ_AddNewRoleModal_NewRoleTabPage foj_addNewRoleModal_newRoleTabPage;
 
 
 
@@ -210,7 +246,7 @@ public class Steps {
             System.setProperty("env", "dev");
         }
         System.out.println("Environment set to: " + System.getProperty("env"));
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//Driver/chromedriver_v91.exe");
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//Driver/chromedriver_v93.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         wait = new WebDriverWait(driver, 30);
@@ -289,6 +325,39 @@ public class Steps {
         fe_implementStandardAndValidationOnPhoneNumberInputPage = new FE_ImplementStandardAndValidationOnPhoneNumberInputPage(driver, wait);
         fe_candidateOrCC_genderDropdownValuesPage = new FE_CandidateOrCC_GenderDropdownValuesPage(driver, wait);
         fe_myJobsList_statusDropdownPage = new FE_MyJobsList_StatusDropdownPage(driver, wait);
+        fe_clientContact_searchForAClientContactRecordByPhoneNumberPage = new FE_ClientContact_SearchForAClientContactRecordByPhoneNumberPage(driver, wait);
+        fe_candidate_searchForACandidateByPhoneNumberPage = new FE_Candidate_SearchForACandidateByPhoneNumberPage(driver, wait);
+        fe_candidate_whenSelecting_setAsOrgOnly_option_systemErrorPage = new FE_Candidate_WhenSelecting_SetAsOrgOnly_Option_SystemErrorPage(driver, wait);
+        fe_change_activityLog_ccFieldPage = new FE_CHANGE_ActivityLog_CCFieldPage(driver, wait);
+        fe_candidateLibrary_showLastContactedPage = new FE_CandidateLibrary_ShowLastContactedPage(driver, wait);
+        fe_change_activityLogJobField_orgPage = new FE_CHANGE_ActivityLogJobField_OrgPage(driver, wait);
+        fe_change_activityLogJobField_candidatePage = new FE_CHANGE_ActivityLogJobField_CandidatePage(driver, wait);
+        fe_change_activityLogJobField_clientContactPage = new FE_CHANGE_ActivityLogJobField_ClientContactPage(driver, wait);
+        fe_candidateTeamListAndPipelineStages_rename_currentRole_columnPage = new FE_CandidateTeamListAndPipelineStages_Rename_CurrentRole_ColumnPage(driver, wait);
+        fe_candidateRoleAddOrEditModal_jobTitleRequiredFieldPage = new FE_CandidateRoleAddOrEditModal_JobTitleRequiredFieldPage(driver, wait);
+        fe_candidateGenderDropdown_allowUserToClearFieldBySelecting_nonePage = new FE_CandidateGenderDropdown_AllowUserToClearFieldBySelecting_NonePage(driver, wait);
+        fe_jobRearchResults_addMissingFieldRateTypePage = new FE_JobRearchResults_AddMissingFieldRateTypePage(driver, wait);
+        fe_job_changeMainClientContactPage = new FE_Job_ChangeMainClientContactPage(driver, wait);
+        fe_searchBar_keepDropdownAndSameTabOpenWhenAddingInputAfterFirstQueryPage = new FE_SearchBar_KeepDropdownAndSameTabOpenWhenAddingInputAfterFirstQueryPage(driver, wait);
+        fe_searchResultsPage_viewAllJobResultsInListViewPage = new FE_SearchResultsPage_ViewAllJobResultsInListViewPage(driver, wait);
+        clone_fe_myJobsList_statusDropdownPage = new CLONE_FE_MyJobsList_StatusDropdownPage(driver, wait);
+        editingDocumentMetaData_candidateCVDocumentsPage = new EditingDocumentMetaData_CandidateCVDocumentsPage(driver, wait);
+        downloadingDocument_candidatePage = new DownloadingDocument_CandidatePage(driver, wait);
+        fe_jobRecord_replaceLastActivityDateWithLastContactedDatePage = new FE_JobRecord_ReplaceLastActivityDateWithLastContactedDatePage(driver, wait);
+        fe_quickCreateMenu_closeOptionsOnClickAwayPage = new FE_QuickCreateMenu_CloseOptionsOnClickAwayPage(driver, wait);
+        fe_jobRecord_myJobsEmptyStateDisplaying_zero_nextToMessagePage = new FE_JobRecord_MyJobsEmptyStateDisplaying_Zero_NextToMessagePage(driver, wait);
+        fe_clientContact_createFormFields_setPrimaryContactPage = new FE_ClientContact_CreateFormFields_SetPrimaryContactPage(driver, wait);
+        fe_candidateContactDetails_inlinefield_removingPrimaryContactPage = new FE_CandidateContactDetails_Inlinefield_RemovingPrimaryContactPage(driver, wait);
+        fe_clientContact_addOrEditRole_display_addAndEditPrimaryContactPage = new FE_ClientContact_AddOrEditRole_Display_AddAndEditPrimaryContactPage(driver, wait);
+        clone_fe_change_activityLogJobFieldPage = new CLONE_FE_CHANGE_ActivityLogJobFieldPage(driver, wait);
+        fe_clientContactCreate_genderDropdownValuesPage = new FE_ClientContactCreate_GenderDropdownValuesPage(driver, wait);
+        fe_organisation_addSubsidiaryOrganisationError_amendErrorMessagePage = new FE_Organisation_AddSubsidiaryOrganisationError_AmendErrorMessagePage(driver, wait);
+        fe_pagination_implementPaginationForClientContactLibraryPage = new FE_Pagination_ImplementPaginationForClientContactLibraryPage(driver, wait);
+        fe_clientContact_createActivityEventFilterComponentInStorybookPage = new FE_ClientContact_CreateActivityEventFilterComponentInStorybookPage(driver, wait);
+        fe_jobKeyDetails_updateKeyDetailsFormNotSendingOrganisation_idInvalidRequestPage = new FE_JobKeyDetails_UpdateKeyDetailsFormNotSendingOrganisation_IdInvalidRequestPage(driver, wait);
+        foj_addNewRoleModal_fojTabPage = new FOJ_AddNewRoleModal_FOJTabPage(driver, wait);
+        foj_addNewRoleModal_newRoleTabPage = new FOJ_AddNewRoleModal_NewRoleTabPage(driver, wait);
+
 
 
 
@@ -310,7 +379,7 @@ public class Steps {
 
     @Given("User launch Chrome browser")
     public void user_launch_chrome_browser() {
-        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//Driver/chromedriver_v90.exe");
+        System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "//Driver/chromedriver_v93.exe");
         driver = new ChromeDriver();
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         driver.manage().timeouts().setScriptTimeout(30, TimeUnit.SECONDS);
@@ -382,6 +451,7 @@ public class Steps {
         prbjp = new FEPermissionsRoleBasedJobPage(driver);
         eirsomadp = new FE_EditInterviewRounds_SingleOrMulti_AdditionalRoundPage(driver);
         cealap = new FECandidateEditActivityLogActivityPage(driver);
+        fejvafp = new FEJob_ViewActivity_Activity_FilterPage(driver);
 
         //########################################DATA#############################################
         jp = new JobPage(driver);
@@ -1889,6 +1959,11 @@ public class Steps {
 
     //###############################################FE-Job-CreateActivity-ActivityModal################################
 
+    @When("User clicks on the Activity Tab link")
+    public void user_clicks_on_the_activity_tab_link() throws Exception{
+        jcamp.clickLnkActivityTab();
+    }
+
     @Then("User clicks on the Job Plus button")
     public void user_clicks_on_the_job_plus_button() throws Exception{
         jcamp.clickBtnJobPlus();
@@ -2707,11 +2782,11 @@ public class Steps {
         wait.until(ExpectedConditions.visibilityOf(beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.btnEditActivity));
         beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.btnEditActivity.click();
 
-        wait.until(ExpectedConditions.visibilityOf(beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.txtResponsibleUser));
-        beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.txtResponsibleUser.click();
-
-        wait.until(ExpectedConditions.visibilityOf(beAndFE_pipeline_editModals_addResponsibleUserAndTeam_placedPage.txtResponsibleUser_item));
-        beAndFE_pipeline_editModals_addResponsibleUserAndTeam_placedPage.txtResponsibleUser_item.click();
+//        wait.until(ExpectedConditions.visibilityOf(beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.txtResponsibleUser));
+//        beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.txtResponsibleUser.click();
+//
+//        wait.until(ExpectedConditions.visibilityOf(beAndFE_pipeline_editModals_addResponsibleUserAndTeam_placedPage.txtResponsibleUser_item));
+//        beAndFE_pipeline_editModals_addResponsibleUserAndTeam_placedPage.txtResponsibleUser_item.click();
 
         beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.btnSave.click();
 
@@ -3105,11 +3180,14 @@ public class Steps {
     @When("I change Job Record Disable Editing Org")
     public void i_change_job_record_disable_editing_org() {
 
-        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenMenu));
-        glob_hudPage.btnOpenMenu.click();
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
 
-        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.linkMyJobs));
-        glob_hudPage.linkMyJobs.click();
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnScrollableJobs));
+        glob_hudPage.btnScrollableJobs.click();
 
         wait.until(ExpectedConditions.visibilityOf(beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.lnkJobItem));
         beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.lnkJobItem.click();
@@ -3130,8 +3208,8 @@ public class Steps {
         wait.until(ExpectedConditions.elementToBeClickable(change_jobRecord_disableEditingOrgPage.txtWorkingLocationName));
         change_jobRecord_disableEditingOrgPage.txtWorkingLocationName.click();
 
-        wait.until(ExpectedConditions.visibilityOf(change_jobRecord_disableEditingOrgPage.txtWorkingLocationName_item));
-        change_jobRecord_disableEditingOrgPage.txtWorkingLocationName_item.click();
+//        wait.until(ExpectedConditions.visibilityOf(change_jobRecord_disableEditingOrgPage.txtWorkingLocationName_item));
+//        change_jobRecord_disableEditingOrgPage.txtWorkingLocationName_item.click();
 //
 //        change_jobRecord_disableEditingOrgPage.btnUpdateKeyDetails.click();
     }
@@ -3359,7 +3437,7 @@ public class Steps {
         glob_hudPage.btnOpenSearch.click();
 
         wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
-        glob_hudPage.txtSearchField.sendKeys("c9e3d1ff-f084-4a64-8034-24efa638918a");
+        glob_hudPage.txtSearchField.sendKeys("1652e600-251a-413e-a795-e76c98bbd2b8");
 
         wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnScrollableJobs));
         glob_hudPage.btnScrollableJobs.click();
@@ -3525,8 +3603,8 @@ public class Steps {
         wait.until(ExpectedConditions.visibilityOf(feAndBE_candidateReview_updateReviewModal_addResponsibleUserAndTeamPage.txtResponsibleTeam));
         feAndBE_candidateReview_updateReviewModal_addResponsibleUserAndTeamPage.txtResponsibleTeam.click();
 
-//        wait.until(ExpectedConditions.visibilityOf(feAndBE_candidateReview_updateReviewModal_addResponsibleUserAndTeamPage.txtResponsibleTeam_item));
-//        feAndBE_candidateReview_updateReviewModal_addResponsibleUserAndTeamPage.txtResponsibleTeam_item.click();
+        wait.until(ExpectedConditions.visibilityOf(feAndBE_candidateReview_updateReviewModal_addResponsibleUserAndTeamPage.txtResponsibleTeam_item));
+        feAndBE_candidateReview_updateReviewModal_addResponsibleUserAndTeamPage.txtResponsibleTeam_item.click();
     }
 
     //########################################################FE: Placed Transition Modal + Edit Modal - CC, RU & RT Field#######################################################################
@@ -3557,17 +3635,17 @@ public class Steps {
         wait.until(ExpectedConditions.visibilityOf(beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.btnEditActivity));
         beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.btnEditActivity.click();
 
-        wait.until(ExpectedConditions.visibilityOf(beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.txtResponsibleUser));
-        beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.txtResponsibleUser.click();
-
-        wait.until(ExpectedConditions.visibilityOf(beAndFE_pipeline_editModals_addResponsibleUserAndTeam_placedPage.txtResponsibleUser_item));
-        beAndFE_pipeline_editModals_addResponsibleUserAndTeam_placedPage.txtResponsibleUser_item.click();
-
-        wait.until(ExpectedConditions.visibilityOf(feAndBE_candidateReview_updateReviewModal_addResponsibleUserAndTeamPage.txtResponsibleTeam));
-        feAndBE_candidateReview_updateReviewModal_addResponsibleUserAndTeamPage.txtResponsibleTeam.click();
-
-        wait.until(ExpectedConditions.visibilityOf(fe_placedTransitionModal_editModal_cc_ru_rt_fieldPage.txtResponsibleTeam_item));
-        fe_placedTransitionModal_editModal_cc_ru_rt_fieldPage.txtResponsibleTeam_item.click();
+//        wait.until(ExpectedConditions.visibilityOf(beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.txtResponsibleUser));
+//        beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.txtResponsibleUser.click();
+//
+//        wait.until(ExpectedConditions.visibilityOf(beAndFE_pipeline_editModals_addResponsibleUserAndTeam_placedPage.txtResponsibleUser_item));
+//        beAndFE_pipeline_editModals_addResponsibleUserAndTeam_placedPage.txtResponsibleUser_item.click();
+//
+//        wait.until(ExpectedConditions.visibilityOf(feAndBE_candidateReview_updateReviewModal_addResponsibleUserAndTeamPage.txtResponsibleTeam));
+//        feAndBE_candidateReview_updateReviewModal_addResponsibleUserAndTeamPage.txtResponsibleTeam.click();
+//
+//        wait.until(ExpectedConditions.visibilityOf(fe_placedTransitionModal_editModal_cc_ru_rt_fieldPage.txtResponsibleTeam_item));
+//        fe_placedTransitionModal_editModal_cc_ru_rt_fieldPage.txtResponsibleTeam_item.click();
 
         //beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.btnSave.click();
     }
@@ -3583,8 +3661,8 @@ public class Steps {
         wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
         glob_hudPage.txtSearchField.sendKeys("Lunga");
 
-        wait.until(ExpectedConditions.visibilityOf(feAndBE_candidate_status_not_updating_or_setting_to_correct_default_valuePage.lnkCandidateItem));
-        feAndBE_candidate_status_not_updating_or_setting_to_correct_default_valuePage.lnkCandidateItem.click();
+        wait.until(ExpectedConditions.visibilityOf(feAndBECandidateStatusNotUpdatingOrSettingToCorrectDefaultValuePage.lnkCandidate_item));
+        feAndBECandidateStatusNotUpdatingOrSettingToCorrectDefaultValuePage.lnkCandidate_item.click();
 
 //        wait.until(ExpectedConditions.visibilityOf(candidateReviewList_disableReviewButtonPage.btnExpandPage));
 //        candidateReviewList_disableReviewButtonPage.btnExpandPage.click();
@@ -3603,11 +3681,14 @@ public class Steps {
     @When("A user creates Placed Transition Modal and View on AL")
     public void a_user_creates_placed_transition_modal_and_view_on_al() {
 
-        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenMenu));
-        glob_hudPage.btnOpenMenu.click();
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
 
-        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.linkMyJobs));
-        glob_hudPage.linkMyJobs.click();
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnScrollableJobs));
+        glob_hudPage.btnScrollableJobs.click();
 
         wait.until(ExpectedConditions.visibilityOf(beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.lnkJobItem));
         beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.lnkJobItem.click();
@@ -3657,8 +3738,12 @@ public class Steps {
         wait.until(ExpectedConditions.visibilityOf(create_jobLocationRemitPage.organisationTextField_item));
         create_jobLocationRemitPage.organisationTextField_item.click();
 
-        wait.until(ExpectedConditions.elementToBeClickable(feOrBe_lJob_createJobModal_addAndViewResponsibleUser_teamPage.txtLocation_menu));
-        feOrBe_lJob_createJobModal_addAndViewResponsibleUser_teamPage.txtLocation_menu.click();
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.candidateList));
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement element = driver.findElement(By.xpath("//input[@id='location-lookup']"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+        executor.executeScript("arguments[0].click();", element);
 
         wait.until(ExpectedConditions.visibilityOf(create_jobLocationRemitPage.txtLocation_menuitem));
         create_jobLocationRemitPage.txtLocation_menuitem.click();
@@ -3669,11 +3754,18 @@ public class Steps {
     @When("User navigates to Candidate Personal Tab Delete and Edit Contact Details Error")
     public void user_navigates_to_candidate_personal_tab_delete_and_edit_contact_details_error() {
 
-        wait.until(ExpectedConditions.visibilityOf(feAndBECandidateStatusNotUpdatingOrSettingToCorrectDefaultValuePage.lnkCandidate_item));
-        feAndBECandidateStatusNotUpdatingOrSettingToCorrectDefaultValuePage.lnkCandidate_item.click();
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
 
-        wait.until(ExpectedConditions.visibilityOf(candidateReviewList_disableReviewButtonPage.btnExpandPage));
-        candidateReviewList_disableReviewButtonPage.btnExpandPage.click();
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(feAndBE_candidate_status_not_updating_or_setting_to_correct_default_valuePage.lnkCandidateItem));
+        feAndBE_candidate_status_not_updating_or_setting_to_correct_default_valuePage.lnkCandidateItem.click();
+
+
+//        wait.until(ExpectedConditions.visibilityOf(candidateReviewList_disableReviewButtonPage.btnExpandPage));
+//        candidateReviewList_disableReviewButtonPage.btnExpandPage.click();
 
         wait.until(ExpectedConditions.visibilityOf(candidatePersonalTabDeleteAndEditContactDetailsErrorPage.lnkPersonalTab));
         candidatePersonalTabDeleteAndEditContactDetailsErrorPage.lnkPersonalTab.click();
@@ -3705,21 +3797,39 @@ public class Steps {
         wait.until(ExpectedConditions.visibilityOf(feOrBe_candidateReview_add_responsibleUser_and_teamToTeviewFormPage.btnCandidateReview));
         feOrBe_candidateReview_add_responsibleUser_and_teamToTeviewFormPage.btnCandidateReview.click();
 
-        wait.until(ExpectedConditions.visibilityOf(feOrBe_candidateReview_add_responsibleUser_and_teamToTeviewFormPage.txtResponsibleUser));
-        feOrBe_candidateReview_add_responsibleUser_and_teamToTeviewFormPage.txtResponsibleUser.click();
-        //beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.txtResponsibleUser.sendKeys("Alec Holland");
+//        wait.until(ExpectedConditions.visibilityOf(feOrBe_candidateReview_add_responsibleUser_and_teamToTeviewFormPage.txtResponsibleUser));
+//        feOrBe_candidateReview_add_responsibleUser_and_teamToTeviewFormPage.txtResponsibleUser.click();
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.candidateList));
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement element = driver.findElement(By.id("Responsible-user-lookup"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
 
-        wait.until(ExpectedConditions.visibilityOf(beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.txtResponsibleUser_item));
-        beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.txtResponsibleUser_item.click();
 
-//        wait.until(ExpectedConditions.visibilityOf(beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.txtResponsibleTeam));
-//        beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.txtResponsibleTeam.click();
+
+//        wait.until(ExpectedConditions.visibilityOf(feOrBe_candidateReview_add_responsibleUser_and_teamToTeviewFormPage.txtResponsibleUser_item));
+//        feOrBe_candidateReview_add_responsibleUser_and_teamToTeviewFormPage.txtResponsibleUser_item.click();
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.candidateList));
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement ele = driver.findElement(By.xpath("//h6[contains(text(), 'Ajesh Jally')]"));
+        JavascriptExecutor exe = (JavascriptExecutor)driver;
+        exe.executeScript("arguments[0].click();", ele);
+
+
+
+//        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.candidateList));
+//        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+//        WebElement elem = driver.findElement(By.xpath("//div[@data-testid='Responsible team-label']"));
+//        JavascriptExecutor exec = (JavascriptExecutor)driver;
+//        exe.executeScript("arguments[0].click();", elem);
 //
-//        wait.until(ExpectedConditions.visibilityOf(feOrBe_candidateReview_add_responsibleUser_and_teamToTeviewFormPage.txtResponsibleTeam_item));
-//        feOrBe_candidateReview_add_responsibleUser_and_teamToTeviewFormPage.txtResponsibleTeam_item.click();
+//        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.candidateList));
+//        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+//        WebElement elemen = driver.findElement(By.xpath("//li[contains(text(), 'ScrumbleBees')]"));
+//        exe.executeScript("arguments[0].click();", elemen);
 
-        wait.until(ExpectedConditions.visibilityOf(feOrBe_candidateReview_add_responsibleUser_and_teamToTeviewFormPage.txtNotes));
-        feOrBe_candidateReview_add_responsibleUser_and_teamToTeviewFormPage.txtNotes.sendKeys("Just a test");
+        //wait.until(ExpectedConditions.visibilityOf(feOrBe_candidateReview_add_responsibleUser_and_teamToTeviewFormPage.txtNotes));
+        //feOrBe_candidateReview_add_responsibleUser_and_teamToTeviewFormPage.txtNotes.sendKeys("Just a test");
 
         //feOrBe_candidateReview_add_responsibleUser_and_teamToTeviewFormPage.btnCreateCandidateReview.click();
 
@@ -3734,7 +3844,7 @@ public class Steps {
         glob_hudPage.btnOpenSearch.click();
 
         wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
-        glob_hudPage.txtSearchField.sendKeys("Lunga");
+        glob_hudPage.txtSearchField.sendKeys("Lung");
 
         wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnScrollableJobs));
         glob_hudPage.btnScrollableJobs.click();
@@ -3790,14 +3900,33 @@ public class Steps {
         wait.until(ExpectedConditions.visibilityOf(feOrBE_alerts_candidate_view_createdByPage.btnAddAlert));
         feOrBE_alerts_candidate_view_createdByPage.btnAddAlert.click();
 
-        wait.until(ExpectedConditions.visibilityOf(feOrBE_alerts_candidate_view_createdByPage.btnAlertType));
-        feOrBE_alerts_candidate_view_createdByPage.btnAlertType.click();
+//        wait.until(ExpectedConditions.visibilityOf(feOrBE_alerts_candidate_view_createdByPage.btnAlertType));
+//        feOrBE_alerts_candidate_view_createdByPage.btnAlertType.click();
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.candidateList));
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement element = driver.findElement(By.xpath("//div[@data-testid='alertType']"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
 
-        wait.until(ExpectedConditions.visibilityOf(feAndBE_alerts_job_storeAndView_createdByPage.drpDwnJobAlertType_menuItem));
-        feAndBE_alerts_job_storeAndView_createdByPage.drpDwnJobAlertType_menuItem.click();
 
-        wait.until(ExpectedConditions.visibilityOf(feAndBE_alertsClientContact_storeAndView_createdByPage.txtReason));
+
+//        wait.until(ExpectedConditions.visibilityOf(feAndBE_alerts_job_storeAndView_createdByPage.drpDwnJobAlertType_menuItem));
+//        feAndBE_alerts_job_storeAndView_createdByPage.drpDwnJobAlertType_menuItem.click();
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.candidateList));
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement ele = driver.findElement(By.xpath("//span[contains(text(), 'Caution')]"));
+        JavascriptExecutor exe = (JavascriptExecutor)driver;
+        exe.executeScript("arguments[0].click();", ele);
+
+
+        //wait.until(ExpectedConditions.visibilityOf(feAndBE_alertsClientContact_storeAndView_createdByPage.txtReason));
         feAndBE_alertsClientContact_storeAndView_createdByPage.txtReason.sendKeys("Just an alert");
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement elem = driver.findElement(By.name("reason"));
+        JavascriptExecutor exec = (JavascriptExecutor)driver;
+        exec.executeScript("arguments[0].click();", elem);
+        elem.sendKeys("Just a test");
+
 
         feOrBE_alerts_candidate_view_createdByPage.btnCreateCandidateAlert.click();
 
@@ -3956,11 +4085,11 @@ public class Steps {
         wait.until(ExpectedConditions.visibilityOf(beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.btnEditActivity));
         beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.btnEditActivity.click();
 
-        wait.until(ExpectedConditions.visibilityOf(placedEditActivityLog_notUpdatingSalaryPage.txtSalaryField));
-        placedEditActivityLog_notUpdatingSalaryPage.txtSalaryField.clear();
-        placedEditActivityLog_notUpdatingSalaryPage.txtSalaryField.sendKeys("300000");
-
-        placedEditActivityLog_notUpdatingSalaryPage.btnSaveActivity.click();
+//        wait.until(ExpectedConditions.visibilityOf(placedEditActivityLog_notUpdatingSalaryPage.txtSalaryField));
+//        placedEditActivityLog_notUpdatingSalaryPage.txtSalaryField.clear();
+//        placedEditActivityLog_notUpdatingSalaryPage.txtSalaryField.sendKeys("300000");
+//
+//        placedEditActivityLog_notUpdatingSalaryPage.btnSaveActivity.click();
     }
 
     //#############################################FE: Dialog Box (Retainer/Shortlist) - Create Job Modal###########################################
@@ -4114,7 +4243,7 @@ public class Steps {
 
         WebDriverWait waiting = new WebDriverWait(driver, 15, 100);
         driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-        WebElement element = driver.findElement(By.xpath("//span[contains(text(), 'United Kingdom • Live Jobs: 3')]"));
+        WebElement element = driver.findElement(By.xpath("//span[contains(text(), 'United Kingdom • Live Jobs: 2')]"));
         JavascriptExecutor executor = (JavascriptExecutor)driver;
         executor.executeScript("arguments[0].click();", element);
 
@@ -4346,7 +4475,7 @@ public class Steps {
         glob_hudPage.btnOpenSearch.click();
 
         wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
-        glob_hudPage.txtSearchField.sendKeys("Lunga");
+        glob_hudPage.txtSearchField.sendKeys("Lung");
 
         wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnScrollableJobs));
         glob_hudPage.btnScrollableJobs.click();
@@ -4423,7 +4552,12 @@ public class Steps {
         glob_hudPage.btnOpenMenu.click();
 
         wait.until(ExpectedConditions.visibilityOf(glob_hudPage.candidateList));
-        glob_hudPage.candidateList.click();
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement element = driver.findElement(By.xpath("//a[@data-testid='candidatesListsLink']"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+
+
 
         wait.until(ExpectedConditions.visibilityOf(feAndBE_alerts_candidate_viewCandidateAlertsInListsOrlibraryPage.lnkCandidateListItem));
         feAndBE_alerts_candidate_viewCandidateAlertsInListsOrlibraryPage.lnkCandidateListItem.click();
@@ -4500,13 +4634,13 @@ public class Steps {
         glob_hudPage.btnOpenSearch.click();
 
         wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
-        glob_hudPage.txtSearchField.sendKeys("c9e3d1ff-f084-4a64-8034-24efa638918a");
+        glob_hudPage.txtSearchField.sendKeys("aafddc5e-574e-42fc-83c6-41e7c3c84211");
 
         wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnScrollableJobs));
         glob_hudPage.btnScrollableJobs.click();
 
-        wait.until(ExpectedConditions.visibilityOf(beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.lnkJobItem));
-        beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.lnkJobItem.click();
+        wait.until(ExpectedConditions.visibilityOf(feOrBE_pipelineMgmtOfferNotStoringCI_idPage.lnkJobItem));
+        feOrBE_pipelineMgmtOfferNotStoringCI_idPage.lnkJobItem.click();
 
         wait.until(ExpectedConditions.visibilityOf(beAndFE_pipeline_editModals_addResponsibleUserAndTeam_offerPage.lnkOffer));
         feOrBE_pipelineMgmtOfferNotStoringCI_idPage.lnkOffer.click();
@@ -4527,13 +4661,13 @@ public class Steps {
         glob_hudPage.btnOpenSearch.click();
 
         wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
-        glob_hudPage.txtSearchField.sendKeys("c9e3d1ff-f084-4a64-8034-24efa638918a");
+        glob_hudPage.txtSearchField.sendKeys("aafddc5e-574e-42fc-83c6-41e7c3c84211");
 
         wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnScrollableJobs));
         glob_hudPage.btnScrollableJobs.click();
 
-        wait.until(ExpectedConditions.visibilityOf(beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.lnkJobItem));
-        beAndFE_pipeline_editModals_addResponsibleUserAndTeam_shortListPage.lnkJobItem.click();
+        wait.until(ExpectedConditions.visibilityOf(feOrBE_pipelineMgmtOfferNotStoringCI_idPage.lnkJobItem));
+        feOrBE_pipelineMgmtOfferNotStoringCI_idPage.lnkJobItem.click();
 
         wait.until(ExpectedConditions.visibilityOf(beAndFE_pipeline_editModals_addResponsibleUserAndTeam_placedPage.lnkPlaced));
         beAndFE_pipeline_editModals_addResponsibleUserAndTeam_placedPage.lnkPlaced.click();
@@ -4689,8 +4823,8 @@ public class Steps {
         wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnScrollableJobs));
         glob_hudPage.btnScrollableJobs.click();
 
-        wait.until(ExpectedConditions.visibilityOf(job_deleteAlertDialogueBox_ok_buttonIssuePage.lnkJobItem));
-        job_deleteAlertDialogueBox_ok_buttonIssuePage.lnkJobItem.click();
+        wait.until(ExpectedConditions.visibilityOf(feOrBE_pipelineMgmtOfferNotStoringCI_idPage.lnkJobItem));
+        feOrBE_pipelineMgmtOfferNotStoringCI_idPage.lnkJobItem.click();
 
         wait.until(ExpectedConditions.visibilityOf(job_deleteAlertDialogueBox_ok_buttonIssuePage.btnAlert));
         job_deleteAlertDialogueBox_ok_buttonIssuePage.btnAlert.click();
@@ -4893,7 +5027,13 @@ public class Steps {
         glob_hudPage.btnOpenMenu.click();
 
         wait.until(ExpectedConditions.visibilityOf(glob_hudPage.clientList));
-        glob_hudPage.clientList.click();
+        //glob_hudPage.clientList.click();
+        WebDriverWait wait = new WebDriverWait(driver, 15, 100);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement ele = driver.findElement(By.xpath("//a[@data-testid='clientsListsLink']"));
+        JavascriptExecutor exe = (JavascriptExecutor)driver;
+        exe.executeScript("arguments[0].click();", ele);
+
 
         wait.until(ExpectedConditions.visibilityOf(fe_clientContact_jobsTabErrorPage.lnkClientListItem));
         fe_clientContact_jobsTabErrorPage.lnkClientListItem.click();
@@ -5232,10 +5372,1474 @@ public class Steps {
 
         wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnScrollableJobs));
         glob_hudPage.btnScrollableJobs.click();
+    }
+
+    //###############################################FE: Job - View Activity - Activity - Filter####################################
+
+    @When("User clicks on the Activity Link Tab")
+    public void user_clicks_on_the_activity_link_tab() throws Exception{
+        fejvafp.clickLnkActivityTab();
+    }
+
+    @When("User click on the Job Record radio button")
+    public void user_click_on_the_job_record_radio_button() throws Exception{
+        fejvafp.clickActivityTypeItem();
+    }
+
+    //##################################FE - Client Contact - Search for a client contact record by phone number#####################
+
+    @When("User searches for a Client Contact Record by Phone Number")
+    public void user_searches_for_a_client_contact_record_by_phone_number() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("7911 123411");
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnScrollableClientContacts));
+        glob_hudPage.btnScrollableClientContacts.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_searchForAClientContactRecordByPhoneNumberPage.lnkClientContactItem));
+        fe_clientContact_searchForAClientContactRecordByPhoneNumberPage.lnkClientContactItem.click();
+    }
+
+    //###############################FE - Candidate - Search for a candidate by phone number################################################
+
+    @When("User searches for a Candidate Record by Phone Number")
+    public void user_searches_for_a_candidate_record_by_phone_number() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("7911123421");
+
+        wait.until(ExpectedConditions.visibilityOf(fe_candidate_searchForACandidateByPhoneNumberPage.lnkCandidateItem));
+        fe_candidate_searchForACandidateByPhoneNumberPage.lnkCandidateItem.click();
+    }
+
+    //############################FE - Candidate: When Selecting "Set as Org only" option - system error######################################
+
+    @When("User FE Selects Set as Org only option system error")
+    public void user_fe_selects_set_as_org_only_option_system_error() {
+
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.universalPlusIcon));
+        glob_hudPage.universalPlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.universalPlusIcon_CreateCandidate));
+        glob_hudPage.universalPlusIcon_CreateCandidate.click();
+
+        create_newCandidatePage.ciyTextfield.sendKeys("Brighton ");
+        /* Set Contact Details */
+
+        wait.until(ExpectedConditions.visibilityOf(fe_candidate_whenSelecting_setAsOrgOnly_option_systemErrorPage.txtFirstName));
+        fe_candidate_whenSelecting_setAsOrgOnly_option_systemErrorPage.txtFirstName.sendKeys("AutoDoNotDelete");
+
+        wait.until(ExpectedConditions.visibilityOf(fe_candidate_whenSelecting_setAsOrgOnly_option_systemErrorPage.txtFamilyName));
+        fe_candidate_whenSelecting_setAsOrgOnly_option_systemErrorPage.txtFamilyName.sendKeys("AutoDoNotDelete");
+
+        create_newCandidatePage.contact_PlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.contact_MobileNumber));
+        create_newCandidatePage.contact_MobileNumber.click();
+        Date date  = new Date();
+        actions.sendKeys("1234567891" + Keys.ENTER).perform();
+        create_newCandidatePage.contact_PlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.contact_EmailAddress));
+        create_newCandidatePage.contact_EmailAddress.click();
+        actions.sendKeys("testerlunga@test.com" + Keys.ENTER).perform();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_candidate_whenSelecting_setAsOrgOnly_option_systemErrorPage.txtOrganisationField));
+        fe_candidate_whenSelecting_setAsOrgOnly_option_systemErrorPage.txtOrganisationField.sendKeys("AutoOrg");
+
+        wait.until(ExpectedConditions.visibilityOf(fe_candidate_whenSelecting_setAsOrgOnly_option_systemErrorPage.lnkOrganisationOnly));
+        fe_candidate_whenSelecting_setAsOrgOnly_option_systemErrorPage.lnkOrganisationOnly.click();
+
+        //wait.until(ExpectedConditions.visibilityOf(fe_candidate_whenSelecting_setAsOrgOnly_option_systemErrorPage.txtDesiredWorkLocation));
+        //fe_candidate_whenSelecting_setAsOrgOnly_option_systemErrorPage.txtDesiredWorkLocation.click();
+
+        // Submit
+
+//        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.candidateList));
+//        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+//        WebElement element = driver.findElement(By.xpath("//button[@data-testid='testIdSubmit']"));
+//        JavascriptExecutor executor = (JavascriptExecutor)driver;
+//        executor.executeScript("arguments[0].click();", element);
+    }
+
+    //######################################FE: (CHANGE) Activity Log CC Field ######################################################################
+
+    @When("User Client Contact add activity lof CC field")
+    public void user_client_contact_add_activity_lof_cc_field() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnScrollableJobs));
+        glob_hudPage.btnScrollableJobs.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_change_activityLog_ccFieldPage.lnkJobItem));
+        fe_change_activityLog_ccFieldPage.lnkJobItem.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_change_activityLog_ccFieldPage.lnkActivityTab));
+        fe_change_activityLog_ccFieldPage.lnkActivityTab.click();
+
+        fe_change_activityLog_ccFieldPage.btnActivityPlus.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_change_activityLog_ccFieldPage.dropDownBtnActivityType));
+        fe_change_activityLog_ccFieldPage.dropDownBtnActivityType.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_change_activityLog_ccFieldPage.dropDownBtnActivityType_Item));
+        fe_change_activityLog_ccFieldPage.dropDownBtnActivityType_Item.click();
+
+//        wait.until(ExpectedConditions.visibilityOf(fe_change_activityLog_ccFieldPage.txtClientContact));
+//        fe_change_activityLog_ccFieldPage.txtClientContact.click();
+        WebElement element = driver.findElement(By.id("client-lookup-label"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+    }
+
+    //###########################FE: Lookup field dropdowns- Long names not displayed correctly, overlaying options#######################
+
+    @When("User checks Long names not displayed correctly overlaying options on jb activity")
+    public void user_checks_long_names_not_displayed_correctly_overlaying_options_on_jb_activity() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnScrollableJobs));
+        glob_hudPage.btnScrollableJobs.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_change_activityLog_ccFieldPage.lnkJobItem));
+        fe_change_activityLog_ccFieldPage.lnkJobItem.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_change_activityLog_ccFieldPage.lnkActivityTab));
+        fe_change_activityLog_ccFieldPage.lnkActivityTab.click();
+
+        fe_change_activityLog_ccFieldPage.btnActivityPlus.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_change_activityLog_ccFieldPage.dropDownBtnActivityType));
+        fe_change_activityLog_ccFieldPage.dropDownBtnActivityType.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_change_activityLog_ccFieldPage.dropDownBtnActivityType_Item));
+        fe_change_activityLog_ccFieldPage.dropDownBtnActivityType_Item.click();
+
+//        wait.until(ExpectedConditions.visibilityOf(fe_change_activityLog_ccFieldPage.txtClientContact));
+//        fe_change_activityLog_ccFieldPage.txtClientContact.click();
+        WebElement element = driver.findElement(By.id("client-lookup-label"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+    }
+
+    //################################FE - Candidate Library - Show Last Contacted #############################################
+
+    @When("User navigates to a Candidate and it will Show Last Contacted date")
+    public void user_navigates_to_a_candidate_and_it_will_show_last_contacted_date() {
+
+        wait.until(ExpectedConditions.visibilityOf(fe_candidateLibrary_showLastContactedPage.lnkCandidateItem));
+        fe_candidateLibrary_showLastContactedPage.lnkCandidateItem.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_candidateLibrary_showLastContactedPage.btnX));
+        fe_candidateLibrary_showLastContactedPage.btnX.click();
+    }
+
+    //##################################FE: (CHANGE) - Activity Log Job Field - Organisation #######################################################
+
+    @When("User navigates to an Organisation records activity Tab and adds an Activity")
+    public void user_navigates_to_an_organisation_records_activity_tab_and_adds_an_activity() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnScrollableOrganisation));
+        glob_hudPage.btnScrollableOrganisation.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_change_activityLogJobField_orgPage.lnkOrganisationItem));
+        fe_change_activityLogJobField_orgPage.lnkOrganisationItem.click();
+
+
+        wait.until(ExpectedConditions.visibilityOf(fe_change_activityLog_ccFieldPage.lnkActivityTab));
+        fe_change_activityLog_ccFieldPage.lnkActivityTab.click();
+
+        fe_change_activityLogJobField_orgPage.btnActivityPlus.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_change_activityLog_ccFieldPage.dropDownBtnActivityType));
+        fe_change_activityLog_ccFieldPage.dropDownBtnActivityType.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_change_activityLog_ccFieldPage.dropDownBtnActivityType_Item));
+        fe_change_activityLog_ccFieldPage.dropDownBtnActivityType_Item.click();
+
+        WebElement element = driver.findElement(By.id("Job-lookup"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+
+        WebElement elemen = driver.findElement(By.xpath("//input[@id='Job-lookup']"));
+        JavascriptExecutor exe = (JavascriptExecutor)driver;
+        exe.executeScript("arguments[0].click();", elemen);
+
+        WebElement ele = driver.findElement(By.xpath("//input[@id='Job-lookup']"));
+        JavascriptExecutor exece = (JavascriptExecutor)driver;
+        exece.executeScript("arguments[0].click();", ele);
+    }
+
+    //########################################FE: (CHANGE) - Activity Log Job Field - Candidates ############################################################
+
+    @When("User navigates to an Candidate records activity Tab and adds an Activity")
+    public void user_navigates_to_an_candidate_records_activity_tab_and_adds_an_activity() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(feAndBE_candidate_status_not_updating_or_setting_to_correct_default_valuePage.lnkCandidateItem));
+        feAndBE_candidate_status_not_updating_or_setting_to_correct_default_valuePage.lnkCandidateItem.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_change_activityLog_ccFieldPage.lnkActivityTab));
+        fe_change_activityLog_ccFieldPage.lnkActivityTab.click();
+
+        fe_change_activityLogJobField_candidatePage.btnActivityPlus.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_change_activityLog_ccFieldPage.dropDownBtnActivityType));
+        fe_change_activityLog_ccFieldPage.dropDownBtnActivityType.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_change_activityLog_ccFieldPage.dropDownBtnActivityType_Item));
+        fe_change_activityLog_ccFieldPage.dropDownBtnActivityType_Item.click();
+
+        WebElement element = driver.findElement(By.id("Job-lookup"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+    }
+
+    //######################################FE: (CHANGE) - Activity Log Job Field - Client Contact#####################################
+    //fe_change_activityLogJobField_clientContactPage
+    @When("User navigates to an Client Contact records activity Tab and adds an Activity")
+    public void user_navigates_to_an_client_contact_records_activity_tab_and_adds_an_activity() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(feAndBE_candidate_status_not_updating_or_setting_to_correct_default_valuePage.lnkCandidateItem));
+        feAndBE_candidate_status_not_updating_or_setting_to_correct_default_valuePage.lnkCandidateItem.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_change_activityLog_ccFieldPage.lnkActivityTab));
+        fe_change_activityLog_ccFieldPage.lnkActivityTab.click();
+
+        fe_change_activityLogJobField_clientContactPage.btnActivityPlus.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_change_activityLog_ccFieldPage.dropDownBtnActivityType));
+        fe_change_activityLog_ccFieldPage.dropDownBtnActivityType.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_change_activityLog_ccFieldPage.dropDownBtnActivityType_Item));
+        fe_change_activityLog_ccFieldPage.dropDownBtnActivityType_Item.click();
+
+        WebElement element = driver.findElement(By.id("Job-lookup"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+    }
+
+    //#################################################FE - Job - Search for a job by job ref (short GUID)###############################
+
+    @When("User searches for a job by job ref short GUID")
+    public void user_searches_for_a_job_by_job_ref_short_guid() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Q8WWZI");
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnScrollableJobs));
+        glob_hudPage.btnScrollableJobs.click();
+
+//        wait.until(ExpectedConditions.visibilityOf(fe_change_activityLog_ccFieldPage.lnkJobItem));
+//        fe_change_activityLog_ccFieldPage.lnkJobItem.click();
+    }
+
+    //#########################################FE - Search results - Sort by Last Contacted Date - Candidate #######################################
+
+    @When("User searches Candidate results that are Sorted by Last Contacted Date")
+    public void user_searches_candidate_results_that_are_sorted_by_last_contacted_date() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+    }
+
+    //###############################################FE - Search results - Sort by Last Contacted Date - Organisation################################
+
+    @When("User searches Organisation results that are Sorted by Last Contacted Date")
+    public void user_searches_organisation_results_that_are_sorted_by_last_contacted_date() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnScrollableOrganisation));
+        glob_hudPage.btnScrollableOrganisation.click();
 
     }
 
+    //#########################################FE: Activity Ordering in Activity Log########################################################################
+
+    @When("User navigates to Client Contact Activity tab and View Ordering in Activity Log")
+    public void user_navigates_to_client_contact_activity_tab_and_view_ordering_in_activity_log() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(feAndBE_candidate_status_not_updating_or_setting_to_correct_default_valuePage.lnkCandidateItem));
+        feAndBE_candidate_status_not_updating_or_setting_to_correct_default_valuePage.lnkCandidateItem.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_change_activityLog_ccFieldPage.lnkActivityTab));
+        fe_change_activityLog_ccFieldPage.lnkActivityTab.click();
+    }
+
+    //#########################FE - Candidate Team List & Pipeline Stages - Rename "Current Role" column#############################################################
+
+    @When("User navigates to a Candidate list record and verifies if Current role is Renamed")
+    public void user_navigates_to_a_candidate_list_record_and_verifies_if_current_role_is_renamed() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.candidateList));
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement element = driver.findElement(By.xpath("//a[@data-testid='candidatesListsLink']"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+
+        wait.until(ExpectedConditions.visibilityOf(fe_candidateTeamListAndPipelineStages_rename_currentRole_columnPage.lnkCandidateListItem));
+        fe_candidateTeamListAndPipelineStages_rename_currentRole_columnPage.lnkCandidateListItem.click();
+    }
+
+    //############################FE - Search bar - Implement error state "Content not found"############################################################
+
+    @When("User Search bar Implements error state {string}")
+    public void user_search_bar_implements_error_state(String string) {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenMenu));
+        glob_hudPage.btnOpenMenu.click();
+
+        WebDriverWait waiting = new WebDriverWait(driver, 15, 100);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement element = driver.findElement(By.xpath("//a[@data-testid='myJobsLink']"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("A");
+    }
+
+    //##################################FE - Candidate Role Add/Edit Modal - Job Title Required field###################################################
+
+    @When("User navigate to a Candidate Role Add or Edit Modal Job Title Required field")
+    public void user_navigate_to_a_candidate_role_add_or_edit_modal_job_title_required_field() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(fe_candidateRoleAddOrEditModal_jobTitleRequiredFieldPage.lnkCandidateItem));
+        fe_candidateRoleAddOrEditModal_jobTitleRequiredFieldPage.lnkCandidateItem.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_candidateRoleAddOrEditModal_jobTitleRequiredFieldPage.lnkCareerTab));
+        fe_candidateRoleAddOrEditModal_jobTitleRequiredFieldPage.lnkCareerTab.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_candidateRoleAddOrEditModal_jobTitleRequiredFieldPage.btnAddCurrentRole));
+        fe_candidateRoleAddOrEditModal_jobTitleRequiredFieldPage.btnAddCurrentRole.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_candidateRoleAddOrEditModal_jobTitleRequiredFieldPage.btnAddNewRole));
+        fe_candidateRoleAddOrEditModal_jobTitleRequiredFieldPage.btnAddNewRole.click();
+    }
+
+    //########################################FE - Candidate gender dropdown - Allow user to clear field by selecting "None"##################################
+
+    @When("User navigates to Candidate gender dropdown Allow user to clear field by selecting None")
+    public void user_navigates_to_candidate_gender_dropdown_allow_user_to_clear_field_by_selecting_none() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(fe_candidateRoleAddOrEditModal_jobTitleRequiredFieldPage.lnkCandidateItem));
+        fe_candidateRoleAddOrEditModal_jobTitleRequiredFieldPage.lnkCandidateItem.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_candidateGenderDropdown_allowUserToClearFieldBySelecting_nonePage.lnkPersonalTab));
+        fe_candidateGenderDropdown_allowUserToClearFieldBySelecting_nonePage.lnkPersonalTab.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_candidateGenderDropdown_allowUserToClearFieldBySelecting_nonePage.txtGenderField));
+        fe_candidateGenderDropdown_allowUserToClearFieldBySelecting_nonePage.txtGenderField.click();
+
+//        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.candidateList));
+//        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+//        WebElement element = driver.findElement(By.xpath("//span[contains(text(), 'Female')]"));
+//        JavascriptExecutor executor = (JavascriptExecutor)driver;
+//        executor.executeScript("arguments[0].click();", element);
+
+
+        wait.until(ExpectedConditions.visibilityOf(fe_candidateGenderDropdown_allowUserToClearFieldBySelecting_nonePage.txtGenderFieldItem));
+        fe_candidateGenderDropdown_allowUserToClearFieldBySelecting_nonePage.txtGenderFieldItem.click();
+    }
+
+    //#########################################FE - Job search results - Add missing field rate type##########################################
+
+    @When("User Job search results and Adds missing field rate type")
+    public void user_job_search_results_and_adds_missing_field_rate_type() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnScrollableJobs));
+        glob_hudPage.btnScrollableJobs.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_jobRearchResults_addMissingFieldRateTypePage.lnkJobItem));
+        fe_jobRearchResults_addMissingFieldRateTypePage.lnkJobItem.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_jobRearchResults_addMissingFieldRateTypePage.lnkInformationTab));
+        fe_jobRearchResults_addMissingFieldRateTypePage.lnkInformationTab.click();
+    }
+
+    //###########################################FE - Job - Change main client contact#########################################################################
+
+    @When("User searches for Job and Change main client contact")
+    public void user_searches_for_job_and_change_main_client_contact() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnScrollableJobs));
+        glob_hudPage.btnScrollableJobs.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_jobRearchResults_addMissingFieldRateTypePage.lnkJobItem));
+        fe_jobRearchResults_addMissingFieldRateTypePage.lnkJobItem.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_jobRearchResults_addMissingFieldRateTypePage.lnkInformationTab));
+        fe_jobRearchResults_addMissingFieldRateTypePage.lnkInformationTab.click();
+
+        WebDriverWait waiting = new WebDriverWait(driver, 15, 100);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement element = driver.findElement(By.xpath("//span[contains(text(), 'HR contacts')]"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+
+        WebDriverWait wait = new WebDriverWait(driver, 15, 100);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement ele = driver.findElement(By.xpath("//button[@data-testid='dropdown']//span[contains(text(), 'Main contact')]"));
+        JavascriptExecutor exe = (JavascriptExecutor)driver;
+        exe.executeScript("arguments[0].click();", ele);
+    }
+
+    //#####################FE - Search bar - Keep dropdown and same tab open when adding input after first query########################################
+    //fe_searchBar_keepDropdownAndSameTabOpenWhenAddingInputAfterFirstQueryPage
+    @When("User searches bar Keep dropdown and same tab open when adding input after first query")
+    public void user_searches_bar_keep_dropdown_and_same_tab_open_when_adding_input_after_first_query() throws Exception{
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lu");
+
+        Thread.sleep(5000);
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys(" nga");
+    }
+
+    //################################FE - Phone number field - Show validation message under each contact field in the form - Candidate#########################################
+
+    @When("User navigates to Phone number field Show validation message under each contact field in the form")
+    public void user_navigates_to_phone_number_field_show_validation_message_under_each_contact_field_in_the_form() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.universalPlusIcon));
+        glob_hudPage.universalPlusIcon.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.universalPlusIcon_CreateCandidate));
+        glob_hudPage.universalPlusIcon_CreateCandidate.click();
+
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.firstNameTextfield));
+        create_newCandidatePage.firstNameTextfield.click();
+        actions.sendKeys("Aotmation(Do Not Delete)" + Keys.ENTER).perform();
+
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.familyNameTextfield));
+        create_newCandidatePage.familyNameTextfield.click();
+        actions.sendKeys("Aotmation(Do Not Delete)" + Keys.ENTER).perform();
+
+        //
+        create_newCandidatePage.ciyTextfield.sendKeys("Brighton ");
+        /* Set Contact Details */
+        create_newCandidatePage.contact_PlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.contact_MobileNumber));
+        create_newCandidatePage.contact_LandlineNumber.click();
+        actions.sendKeys("abcdeffffffg" + Keys.ENTER).perform();
+
+        create_newCandidatePage.contact_PlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.contact_MobileNumber));
+        create_newCandidatePage.contact_MobileNumber.click();
+        Date date  = new Date();
+        actions.sendKeys("0734567833" + Keys.ENTER).perform();
+
+        create_newCandidatePage.contact_PlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.contact_MobileNumber));
+        create_newCandidatePage.contact_LandlineNumber.click();
+        actions.sendKeys("0116509867" + Keys.ENTER).perform();
+
+        create_newCandidatePage.createButton.click();
+    }
+
+    //########################################FE - Phone number field - Show validation message under each contact field in the form##############################
+
+    @When("User creates a Client Contact to Phone number field Show validation message under each contact field in the form")
+    public void user_creates_a_client_contact_to_phone_number_field_show_validation_message_under_each_contact_field_in_the_form() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.universalPlusIcon));
+        glob_hudPage.universalPlusIcon.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.universalPlusIcon_CreateClientContact));
+        glob_hudPage.universalPlusIcon_CreateClientContact.click();
+
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.firstNameTextfield));
+        create_newCandidatePage.firstNameTextfield.click();
+        actions.sendKeys("Aotmation(Do Not Delete)" + Keys.ENTER).perform();
+
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.familyNameTextfield));
+        create_newCandidatePage.familyNameTextfield.click();
+        actions.sendKeys("Automation(Do Not Delete)" + Keys.ENTER).perform();
+
+        //
+        //create_newCandidatePage.ciyTextfield.sendKeys("Brighton ");
+        /* Set Contact Details */
+        create_newCandidatePage.contact_PlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.contact_MobileNumber));
+        create_newCandidatePage.contact_LandlineNumber.click();
+        actions.sendKeys("abcdeffffffg" + Keys.ENTER).perform();
+
+        create_newCandidatePage.contact_PlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.contact_MobileNumber));
+        create_newCandidatePage.contact_MobileNumber.click();
+        Date date  = new Date();
+        actions.sendKeys("0734567833" + Keys.ENTER).perform();
+
+        create_newCandidatePage.contact_PlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.contact_MobileNumber));
+        create_newCandidatePage.contact_LandlineNumber.click();
+        actions.sendKeys("0116509867" + Keys.ENTER).perform();
+
+        create_newCandidatePage.createButton.click();
+    }
+
+    //##############################FE - Search Results Page - View all job results in list view##################################
+
+    @When("User Searches for Results Page and Views all job results in list view")
+    public void user_searches_for_results_page_and_views_all_job_results_in_list_view() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnScrollableJobs));
+        glob_hudPage.btnScrollableJobs.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_searchResultsPage_viewAllJobResultsInListViewPage.lnkSeeAllResults));
+        fe_searchResultsPage_viewAllJobResultsInListViewPage.lnkSeeAllResults.click();
+
+//        wait.until(ExpectedConditions.visibilityOf(fe_searchResultsPage_viewAllJobResultsInListViewPage.lnkCandidateItem));
+//        fe_searchResultsPage_viewAllJobResultsInListViewPage.lnkCandidateItem.click();
+
+//        wait.until(ExpectedConditions.visibilityOf(fe_searchResultsPage_viewAllJobResultsInListViewPage.btnExpand));
+//        fe_searchResultsPage_viewAllJobResultsInListViewPage.btnExpand.click();
+    }
+
+    //############################################CLONE - FE: My Jobs List - Status Dropdown###############################################
+
+    @When("User navigates to My Jobs List Status Dropdown")
+    public void user_navigates_to_my_jobs_list_status_dropdown() {
+        // clone_fe_myJobsList_statusDropdownPage
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnScrollableJobs));
+        glob_hudPage.btnScrollableJobs.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_jobRearchResults_addMissingFieldRateTypePage.lnkJobItem));
+        fe_jobRearchResults_addMissingFieldRateTypePage.lnkJobItem.click();
+
+
+        wait.until(ExpectedConditions.visibilityOf(clone_fe_myJobsList_statusDropdownPage.btnStatusDropdown));
+        clone_fe_myJobsList_statusDropdownPage.btnStatusDropdown.click();
+    }
+
+    //################CLONE - FE - Search Results Page - Add total number of results per each record type#########################################
+
+    @When("User Searches for Results Page Add total number of results per each record type")
+    public void user_searches_for_results_page_add_total_number_of_results_per_each_record_type() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(fe_searchResultsPage_viewAllJobResultsInListViewPage.lnkSeeAllResults));
+        fe_searchResultsPage_viewAllJobResultsInListViewPage.lnkSeeAllResults.click();
+    }
+
+    //##############################Editing Document Meta Data: Candidate CV Documents###########################################################
+
+    @When("User Edits Document Meta Data on Candidate CV Documents")
+    public void user_edits_document_meta_data_on_candidate_cv_documents() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(editingDocumentMetaData_candidateCVDocumentsPage.lnkCandidateItem));
+        editingDocumentMetaData_candidateCVDocumentsPage.lnkCandidateItem.click();
+
+        wait.until(ExpectedConditions.visibilityOf(editingDocumentMetaData_candidateCVDocumentsPage.lnkDocumentsTab));
+        editingDocumentMetaData_candidateCVDocumentsPage.lnkDocumentsTab.click();
+
+        WebDriverWait waiting = new WebDriverWait(driver, 15, 100);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement element = driver.findElement(By.xpath("//h6[contains(text(), 'english')]"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+
+        wait.until(ExpectedConditions.visibilityOf(editingDocumentMetaData_candidateCVDocumentsPage.txtDescription));
+        editingDocumentMetaData_candidateCVDocumentsPage.txtDescription.sendKeys("An elderly couple is attending church. About halfway through the service a husband leans over and says to his wife");
+
+        wait.until(ExpectedConditions.visibilityOf(editingDocumentMetaData_candidateCVDocumentsPage.drpdLanguage));
+        editingDocumentMetaData_candidateCVDocumentsPage.drpdLanguage.click();
+
+        wait.until(ExpectedConditions.visibilityOf(editingDocumentMetaData_candidateCVDocumentsPage.btnCancel));
+        //editingDocumentMetaData_candidateCVDocumentsPage.btnCancel.click();
+    }
+
+    //#########################################Downloading Document: Candidate#####################################################################################################
+
+    @When("User Downloads a Document on a Candidate record")
+    public void user_downloads_a_document_on_a_candidate_record() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(editingDocumentMetaData_candidateCVDocumentsPage.lnkCandidateItem));
+        editingDocumentMetaData_candidateCVDocumentsPage.lnkCandidateItem.click();
+
+        wait.until(ExpectedConditions.visibilityOf(editingDocumentMetaData_candidateCVDocumentsPage.lnkDocumentsTab));
+        editingDocumentMetaData_candidateCVDocumentsPage.lnkDocumentsTab.click();
+
+        WebDriverWait waiting = new WebDriverWait(driver, 15, 100);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement element = driver.findElement(By.xpath("//h6[contains(text(), 'english')]"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+
+        waiting = new WebDriverWait(driver, 15, 100);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement ele = driver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div[2]/div[1]/div/div[2]/div/div/div/div[1]/span/button"));
+        JavascriptExecutor exe = (JavascriptExecutor)driver;
+        exe.executeScript("arguments[0].click();", ele);
+    }
+
+    //################################FE - Hide CV icon from Candidate header#######################################################
+
+    @When("User Hides CV icon from Candidate header")
+    public void user_hides_cv_icon_from_candidate_header() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lung");
+
+        wait.until(ExpectedConditions.visibilityOf(editingDocumentMetaData_candidateCVDocumentsPage.lnkCandidateItem));
+        editingDocumentMetaData_candidateCVDocumentsPage.lnkCandidateItem.click();
+    }
+
+    //################################FE - Client Contact Record - Show Last Contacted date##################################################
+
+    @When("User navigates to Client Contact Record and Shows Last Contacted date")
+    public void user_navigates_to_client_contact_record_and_shows_last_contacted_date() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenMenu));
+        glob_hudPage.btnOpenMenu.click();
+
+//        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.allClientContacts));
+//        glob_hudPage.allClientContacts.click();
+        WebDriverWait waiting = new WebDriverWait(driver, 15, 100);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement element = driver.findElement(By.xpath("//a[@data-testid='allClientsLink']"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+    }
+
+    //####################################FE - Organisation Record - Show Last Contacted date ###################################################
+
+    @When("User navigates to an Organisation Record and Shows Last Contacted date")
+    public void user_navigates_to_an_organisation_record_and_shows_last_contacted_date() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenMenu));
+        glob_hudPage.btnOpenMenu.click();
+
+        WebDriverWait waiting = new WebDriverWait(driver, 15, 100);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement element = driver.findElement(By.xpath("//a[@data-testid='allOrganisationsLink']"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+    }
+
+    //#############################FE - Job record - Replace Last Activity date with Last Contacted date#######################################
+
+    @When("User navigates to a Job record and Replace Last Activity date with Last Contacted date")
+    public void user_navigates_to_a_job_record_and_replace_last_activity_date_with_last_contacted_date() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnScrollableJobs));
+        glob_hudPage.btnScrollableJobs.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_jobRecord_replaceLastActivityDateWithLastContactedDatePage.lnkJobItem));
+        fe_jobRecord_replaceLastActivityDateWithLastContactedDatePage.lnkJobItem.click();
+    }
+
+    @Then("User verifies that I can view the name has been changed")
+    public void user_verifies_that_i_can_view_the_name_has_been_changed() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.notification_CreatedOrganisation));
+        assertThat(glob_hudPage.notification_CreatedOrganisation.getText(), containsString("LungasNewOrg"));
+    }
+
+    //###################################Feature: FE - Quick Create Menu - Close options on click away################################################
+
+    @When("User Quick navigates to Create Menu and Close options on click away")
+    public void user_quick_navigates_to_create_menu_and_close_options_on_click_away() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.universalPlusIcon));
+        glob_hudPage.universalPlusIcon.click();
+
+//        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenMenu));
+//        glob_hudPage.btnOpenMenu.click();
+    }
+
+    //###################################FE - Job record - My Jobs empty state displaying "0" next to message##################################################
+
+    @When("User navigates to Job record under My Jobs empty state displaying Zero next to message")
+    public void user_navigates_to_job_record_under_my_jobs_empty_state_displaying_zero_next_to_message() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenMenu));
+        glob_hudPage.btnOpenMenu.click();
+
+
+        WebDriverWait waiting = new WebDriverWait(driver, 15, 100);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement element = driver.findElement(By.xpath("//a[@data-testid='myJobsLink']"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+
+        wait.until(ExpectedConditions.visibilityOf(fe_jobRecord_myJobsEmptyStateDisplaying_zero_nextToMessagePage.btnCompletedTab));
+        fe_jobRecord_myJobsEmptyStateDisplaying_zero_nextToMessagePage.btnCompletedTab.click();
+    }
+
+    //###################################FE - Client Contact -  Create Form fields - Set primary contact##########################################################
+
+    @When("User creates Client Contact and Create Form fields and Set primary contact")
+    public void user_creates_client_contact_and_create_form_fields_and_set_primary_contact() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.universalPlusIcon));
+        glob_hudPage.universalPlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.universalPlusIcon_CreateClientContact));
+        glob_hudPage.universalPlusIcon_CreateClientContact.click();
+        /* Set Personal Details */
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_createFormFields_setPrimaryContactPage.txtFirstNameField));
+        fe_clientContact_createFormFields_setPrimaryContactPage.txtFirstNameField.sendKeys("Mike");
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_createFormFields_setPrimaryContactPage.txtLastNameField));
+        fe_clientContact_createFormFields_setPrimaryContactPage.txtLastNameField.sendKeys("Vic");
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_createFormFields_setPrimaryContactPage.txtJobTitleField));
+        fe_clientContact_createFormFields_setPrimaryContactPage.txtJobTitleField.sendKeys("Automation");
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_createFormFields_setPrimaryContactPage.txtOrganisationField));
+        fe_clientContact_createFormFields_setPrimaryContactPage.txtOrganisationField.sendKeys("Lunga");
+
+
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement element = driver.findElement(By.xpath("//span[contains(text(), 'Johannesburg')]"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement eleme = driver.findElement(By.xpath("//input[@name='floor']"));
+        JavascriptExecutor exece = (JavascriptExecutor)driver;
+        exece.executeScript("arguments[0].click();", eleme);
+
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement elem = driver.findElement(By.xpath("//input[@id='location-lookup']"));
+        JavascriptExecutor exec = (JavascriptExecutor)driver;
+        exec.executeScript("arguments[0].click();", elem);
+
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement ele = driver.findElement(By.xpath("//h6[contains(text(), 'London')]"));
+        JavascriptExecutor exe = (JavascriptExecutor)driver;
+        exe.executeScript("arguments[0].click();", ele);
+
+
+
+
+        /* Set Contact Details */
+        create_newCandidatePage.contact_PlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.contact_MobileNumber));
+        create_newCandidatePage.contact_MobileNumber.click();
+        Date date  = new Date();
+        actions.sendKeys("7911 123456" + Keys.ENTER).perform();
+        create_newCandidatePage.contact_PlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.contact_MobileNumber));
+        create_newCandidatePage.contact_MobileNumber.click();
+
+        actions.sendKeys("7911 123465" + Keys.ENTER).perform();
+        create_newCandidatePage.contact_PlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.contact_EmailAddress));
+        create_newCandidatePage.contact_EmailAddress.click();
+        actions.sendKeys("testers@test.com" + Keys.ENTER).perform();
+
+        create_newCandidatePage.contact_PlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.contact_EmailAddress));
+        create_newCandidatePage.contact_EmailAddress.click();
+        actions.sendKeys("teste@test.com" + Keys.ENTER).perform();
+
+        create_newCandidatePage.createButton.click();
+    }
+
+    //########FE - Order inline sections - Order contact details by type and create sections with dividers###############################
+
+    @When("User Order inline sections and Order contact details by type and create sections with dividers")
+    public void user_order_inline_sections_and_order_contact_details_by_type_and_create_sections_with_dividers() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.universalPlusIcon));
+        glob_hudPage.universalPlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.universalPlusIcon_CreateCandidate));
+        glob_hudPage.universalPlusIcon_CreateCandidate.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_createFormFields_setPrimaryContactPage.txtFirstNameField));
+        fe_clientContact_createFormFields_setPrimaryContactPage.txtFirstNameField.sendKeys("Mike");
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_createFormFields_setPrimaryContactPage.txtLastNameField));
+        fe_clientContact_createFormFields_setPrimaryContactPage.txtLastNameField.sendKeys("Vic");
+
+        create_newCandidatePage.ciyTextfield.sendKeys("Cape Town ");
+        /* Set Contact Details */
+        create_newCandidatePage.contact_PlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.contact_MobileNumber));
+        create_newCandidatePage.contact_MobileNumber.click();
+        Date date  = new Date();
+        actions.sendKeys("7911 123456" + Keys.ENTER).perform();
+        create_newCandidatePage.contact_PlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.contact_MobileNumber));
+        create_newCandidatePage.contact_MobileNumber.click();
+
+        actions.sendKeys("7911 123465" + Keys.ENTER).perform();
+        create_newCandidatePage.contact_PlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.contact_EmailAddress));
+        create_newCandidatePage.contact_EmailAddress.click();
+        actions.sendKeys("testers@test.com" + Keys.ENTER).perform();
+
+        create_newCandidatePage.contact_PlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.contact_EmailAddress));
+        create_newCandidatePage.contact_EmailAddress.click();
+        actions.sendKeys("teste@test.com" + Keys.ENTER).perform();
+
+        //create_newCandidatePage.createButton.click();
+    }
+
+    //#######################FE - Candidate Contact Details - Inline fields - Display, add and toggle primary contact##############
+
+    @When("User navigates to Candidate Contact Details Inline fields Displays add and toggle primary contact")
+    public void user_navigates_to_candidate_contact_details_inline_fields_displays_add_and_toggle_primary_contact() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.universalPlusIcon));
+        glob_hudPage.universalPlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.universalPlusIcon_CreateCandidate));
+        glob_hudPage.universalPlusIcon_CreateCandidate.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_createFormFields_setPrimaryContactPage.txtFirstNameField));
+        fe_clientContact_createFormFields_setPrimaryContactPage.txtFirstNameField.sendKeys("Mike");
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_createFormFields_setPrimaryContactPage.txtLastNameField));
+        fe_clientContact_createFormFields_setPrimaryContactPage.txtLastNameField.sendKeys("Vic");
+
+        create_newCandidatePage.ciyTextfield.sendKeys("Cape Town ");
+        /* Set Contact Details */
+        create_newCandidatePage.contact_PlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.contact_MobileNumber));
+        create_newCandidatePage.contact_MobileNumber.click();
+        Date date  = new Date();
+        actions.sendKeys("7911 123456" + Keys.ENTER).perform();
+        create_newCandidatePage.contact_PlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.contact_MobileNumber));
+        create_newCandidatePage.contact_MobileNumber.click();
+
+        actions.sendKeys("7911 123465" + Keys.ENTER).perform();
+        create_newCandidatePage.contact_PlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.contact_EmailAddress));
+        create_newCandidatePage.contact_EmailAddress.click();
+        actions.sendKeys("testers@test.com" + Keys.ENTER).perform();
+
+        create_newCandidatePage.contact_PlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.contact_EmailAddress));
+        create_newCandidatePage.contact_EmailAddress.click();
+        actions.sendKeys("teste@test.com" + Keys.ENTER).perform();
+
+        //create_newCandidatePage.createButton.click();
+    }
+
+    //#######################################FE - Candidate Create form - Set primary contact#################################
+
+    @When("User CreateS A Candidate form and Set primary contact")
+    public void user_create_s_a_candidate_form_and_set_primary_contact() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.universalPlusIcon));
+        glob_hudPage.universalPlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.universalPlusIcon_CreateCandidate));
+        glob_hudPage.universalPlusIcon_CreateCandidate.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_createFormFields_setPrimaryContactPage.txtFirstNameField));
+        fe_clientContact_createFormFields_setPrimaryContactPage.txtFirstNameField.sendKeys("Mike");
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_createFormFields_setPrimaryContactPage.txtLastNameField));
+        fe_clientContact_createFormFields_setPrimaryContactPage.txtLastNameField.sendKeys("Vic");
+
+        create_newCandidatePage.ciyTextfield.sendKeys("Cape Town ");
+        /* Set Contact Details */
+        create_newCandidatePage.contact_PlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.contact_MobileNumber));
+        create_newCandidatePage.contact_MobileNumber.click();
+        Date date  = new Date();
+        actions.sendKeys("7911 123456" + Keys.ENTER).perform();
+        create_newCandidatePage.contact_PlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.contact_MobileNumber));
+        create_newCandidatePage.contact_MobileNumber.click();
+
+        actions.sendKeys("7911 123465" + Keys.ENTER).perform();
+        create_newCandidatePage.contact_PlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.contact_EmailAddress));
+        create_newCandidatePage.contact_EmailAddress.click();
+        actions.sendKeys("testers@test.com" + Keys.ENTER).perform();
+
+        create_newCandidatePage.contact_PlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(create_newCandidatePage.contact_EmailAddress));
+        create_newCandidatePage.contact_EmailAddress.click();
+        actions.sendKeys("teste@test.com" + Keys.ENTER).perform();
+
+        //create_newCandidatePage.createButton.click();
+    }
+
+    //#####################FE - Candidate Contact Details - Inline field - Removing primary contact############################################
+
+    @When("User navigates to Candidate Contact Details Inline field and Removes primary contact")
+    public void user_navigates_to_candidate_contact_details_inline_field_and_removes_primary_contact() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(fe_candidateContactDetails_inlinefield_removingPrimaryContactPage.lnkCandidate));
+        fe_candidateContactDetails_inlinefield_removingPrimaryContactPage.lnkCandidate.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_candidateContactDetails_inlinefield_removingPrimaryContactPage.btnPersonalTab));
+        fe_candidateContactDetails_inlinefield_removingPrimaryContactPage.btnPersonalTab.click();
+
+        WebDriverWait waiting = new WebDriverWait(driver, 15, 100);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement element = driver.findElement(By.xpath("//span[contains(text(), '+447911123413')]"));
+        JavascriptExecutor executor = (JavascriptExecutor)driver;
+        executor.executeScript("arguments[0].click();", element);
+
+//        wait.until(ExpectedConditions.visibilityOf(fe_candidateContactDetails_inlinefield_removingPrimaryContactPage.clearContact));
+//        fe_candidateContactDetails_inlinefield_removingPrimaryContactPage.clearContact.clear();
+    }
+
+    //##############################FE - Client Contact -  Add/Edit role - Display, Add & Edit primary contact#########################################
+
+    @When("User navigates to Client Contact and Add or Edit role and Display Add and Edit primary contact")
+    public void user_navigates_to_client_contact_and_add_or_edit_role_and_display_add_and_edit_primary_contact() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnScrollableClientContacts));
+        glob_hudPage.btnScrollableClientContacts.click();
+
+        wait.until(ExpectedConditions.visibilityOf(clientContact_noValidationOnPositionStartAndEndDatesPage.lnkClientContact));
+        clientContact_noValidationOnPositionStartAndEndDatesPage.lnkClientContact.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_addOrEditRole_display_addAndEditPrimaryContactPage.btnInformationTab));
+        fe_clientContact_addOrEditRole_display_addAndEditPrimaryContactPage.btnInformationTab.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_addOrEditRole_display_addAndEditPrimaryContactPage.btnEditPosition));
+        fe_clientContact_addOrEditRole_display_addAndEditPrimaryContactPage.btnEditPosition.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_addOrEditRole_display_addAndEditPrimaryContactPage.btnEditThisPosition));
+        fe_clientContact_addOrEditRole_display_addAndEditPrimaryContactPage.btnEditThisPosition.click();
+    }
+
+    //###################################FE - Client Contact -  Add/Edit role - Display, Add & Edit primary contact######################################################
+
+    @When("User changes Activity Log Job Field")
+    public void user_changes_activity_log_job_field() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnScrollableClientContacts));
+        glob_hudPage.btnScrollableClientContacts.click();
+
+        wait.until(ExpectedConditions.visibilityOf(clientContact_noValidationOnPositionStartAndEndDatesPage.lnkClientContact));
+        clientContact_noValidationOnPositionStartAndEndDatesPage.lnkClientContact.click();
+
+        wait.until(ExpectedConditions.visibilityOf(clone_fe_change_activityLogJobFieldPage.btnEditActivity));
+        clone_fe_change_activityLogJobFieldPage.btnEditActivity.click();
+    }
+
+    //################################FE - Client Contact Create - Gender Dropdown Values##############################################
+
+    @When("User creates Client Contact and views on Gender Dropdown Values")
+    public void user_creates_client_contact_and_views_on_gender_dropdown_values() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.universalPlusIcon));
+        glob_hudPage.universalPlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.universalPlusIcon_CreateClientContact));
+        glob_hudPage.universalPlusIcon_CreateClientContact.click();
+        /* Set Personal Details */
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContactCreate_genderDropdownValuesPage.drpBtnGender));
+        fe_clientContactCreate_genderDropdownValuesPage.drpBtnGender.click();
+    }
+
+    //##################################FE - Candidate Create Modal - Hide Looking for section#####################################
+
+    @When("User creates Candidate Create Modal Hide Looking for section")
+    public void user_creates_candidate_create_modal_hide_looking_for_section() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.universalPlusIcon));
+        glob_hudPage.universalPlusIcon.click();
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.universalPlusIcon_CreateCandidate));
+        glob_hudPage.universalPlusIcon_CreateCandidate.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_createFormFields_setPrimaryContactPage.txtFirstNameField));
+        fe_clientContact_createFormFields_setPrimaryContactPage.txtFirstNameField.sendKeys("Mike");
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_createFormFields_setPrimaryContactPage.txtLastNameField));
+        fe_clientContact_createFormFields_setPrimaryContactPage.txtLastNameField.sendKeys("Vic");
+    }
+
+    //#####################################FE - Organisation - Add subsidiary organisation error - Amend error message#######################
+
+    @When("User navigates to an Organisation and Add subsidiary organisation error Amend error message")
+    public void user_navigates_to_an_organisation_and_add_subsidiary_organisation_error_amend_error_message() throws Exception{
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnScrollableOrganisation));
+        glob_hudPage.btnScrollableOrganisation.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_organisation_addSubsidiaryOrganisationError_amendErrorMessagePage.organisationItem));
+        fe_organisation_addSubsidiaryOrganisationError_amendErrorMessagePage.organisationItem.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_organisation_addSubsidiaryOrganisationError_amendErrorMessagePage.linkedOrgTab));
+        fe_organisation_addSubsidiaryOrganisationError_amendErrorMessagePage.linkedOrgTab.click();
+
+//        wait.until(ExpectedConditions.visibilityOf(fe_organisation_addSubsidiaryOrganisationError_amendErrorMessagePage.btnSubsidiaryOrgPlus));
+//        fe_organisation_addSubsidiaryOrganisationError_amendErrorMessagePage.btnSubsidiaryOrgPlus.click();
+        WebDriverWait wait = new WebDriverWait(driver, 15, 100);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement elem = driver.findElement(By.xpath("/html/body/div/div/div[1]/div[4]/div/div[3]/div/div[3]/div/button"));
+        JavascriptExecutor exec = (JavascriptExecutor)driver;
+        exec.executeScript("arguments[0].click();", elem);
+
+        //wait.until(ExpectedConditions.visibilityOf(fe_organisation_addSubsidiaryOrganisationError_amendErrorMessagePage.txtOrganisationField));
+        fe_organisation_addSubsidiaryOrganisationError_amendErrorMessagePage.txtOrganisationField.sendKeys("Dummy");
+
+//        wait.until(ExpectedConditions.visibilityOf(fe_organisation_addSubsidiaryOrganisationError_amendErrorMessagePage.txtOrganisationFieldItem));
+//        fe_organisation_addSubsidiaryOrganisationError_amendErrorMessagePage.txtOrganisationFieldItem.click();
+        wait = new WebDriverWait(driver, 15, 100);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement ele = driver.findElement(By.xpath("//h6[contains(text(), 'Dummy Organisation')]"));
+        JavascriptExecutor exe = (JavascriptExecutor)driver;
+        exe.executeScript("arguments[0].click();", ele);
+
+
+
+        wait.until(ExpectedConditions.visibilityOf(fe_organisation_addSubsidiaryOrganisationError_amendErrorMessagePage.btnSelect));
+        fe_organisation_addSubsidiaryOrganisationError_amendErrorMessagePage.btnSelect.click();
+    }
+
+    //############################FE - Pagination - Implement pagination for client contact library##############################################################
+
+    @When("User navigates to Client Contacts and Implement pagination for client contact library")
+    public void user_navigates_to_client_contacts_and_implement_pagination_for_client_contact_library() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenMenu));
+        glob_hudPage.btnOpenMenu.click();
+
+//        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.clientList));
+//        glob_hudPage.clientList.click();
+        WebDriverWait wait = new WebDriverWait(driver, 15, 100);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement ele = driver.findElement(By.xpath("//a[@data-testid='allClientsLink']"));
+        JavascriptExecutor exe = (JavascriptExecutor)driver;
+        exe.executeScript("arguments[0].click();", ele);
+
+
+        wait.until(ExpectedConditions.visibilityOf(fe_pagination_implementPaginationForClientContactLibraryPage.btnNext));
+        fe_pagination_implementPaginationForClientContactLibraryPage.btnNext.click();
+    }
+
+    //################################FE - Client Contact - Create activity event filter component in Storybook#####################################
+
+    @When("User navigates to Client Contacts and Create activity event filter component in Storybook")
+    public void user_navigates_to_client_contacts_and_create_activity_event_filter_component_in_storybook() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenMenu));
+        glob_hudPage.btnOpenMenu.click();
+
+        WebDriverWait wait = new WebDriverWait(driver, 15, 100);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement ele = driver.findElement(By.xpath("//a[@data-testid='allClientsLink']"));
+        JavascriptExecutor exe = (JavascriptExecutor)driver;
+        exe.executeScript("arguments[0].click();", ele);
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_createActivityEventFilterComponentInStorybookPage.activityDateDropdown));
+        fe_clientContact_createActivityEventFilterComponentInStorybookPage.activityDateDropdown.click();
+
+        wait = new WebDriverWait(driver, 15, 100);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement eleme = driver.findElement(By.xpath("/html/body/div/div/div[1]/div[4]/div/div/div[1]/div[2]/div[2]/div/div/svg/path"));
+        JavascriptExecutor execu = (JavascriptExecutor)driver;
+        execu.executeScript("arguments[0].click();", eleme);
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_createActivityEventFilterComponentInStorybookPage.btnOK));
+        fe_clientContact_createActivityEventFilterComponentInStorybookPage.btnOK.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_createActivityEventFilterComponentInStorybookPage.endDate));
+        fe_clientContact_createActivityEventFilterComponentInStorybookPage.endDate.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_createActivityEventFilterComponentInStorybookPage.btnselectDate));
+        fe_clientContact_createActivityEventFilterComponentInStorybookPage.btnselectDate.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_createActivityEventFilterComponentInStorybookPage.btnOK));
+        fe_clientContact_createActivityEventFilterComponentInStorybookPage.btnOK.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_createActivityEventFilterComponentInStorybookPage.btnActivityOK));
+        fe_clientContact_createActivityEventFilterComponentInStorybookPage.btnActivityOK.click();
+    }
+
+    //##########################################FE - Client Contact - Create activity date filter and banner########################################
+
+    @When("User navigates to Client Contacts and Create activity date filter and banner")
+    public void user_navigates_to_client_contacts_and_create_activity_date_filter_and_banner() throws Exception{
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenMenu));
+        glob_hudPage.btnOpenMenu.click();
+
+        WebDriverWait wait = new WebDriverWait(driver, 15, 100);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement ele = driver.findElement(By.xpath("//a[@data-testid='allClientsLink']"));
+        JavascriptExecutor exe = (JavascriptExecutor)driver;
+        exe.executeScript("arguments[0].click();", ele);
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_createActivityEventFilterComponentInStorybookPage.activityDateDropdown));
+        fe_clientContact_createActivityEventFilterComponentInStorybookPage.activityDateDropdown.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_createActivityEventFilterComponentInStorybookPage.btnOK));
+        fe_clientContact_createActivityEventFilterComponentInStorybookPage.btnOK.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_createActivityEventFilterComponentInStorybookPage.endDate));
+        fe_clientContact_createActivityEventFilterComponentInStorybookPage.endDate.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_createActivityEventFilterComponentInStorybookPage.btnselectDate));
+        fe_clientContact_createActivityEventFilterComponentInStorybookPage.btnselectDate.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_createActivityEventFilterComponentInStorybookPage.btnOK));
+        fe_clientContact_createActivityEventFilterComponentInStorybookPage.btnOK.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_clientContact_createActivityEventFilterComponentInStorybookPage.btnActivityOK));
+        fe_clientContact_createActivityEventFilterComponentInStorybookPage.btnActivityOK.click();
+    }
+
+    //##############################FE - Job Key details - Update key details form not sending organisation_id (invalid request)######################################
+
+    @When("User navigates to Job Key details Update key details form not sending organisation id invalid request")
+    public void user_navigates_to_job_key_details_update_key_details_form_not_sending_organisation_id_invalid_request() throws Exception{
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnScrollableJobs));
+        glob_hudPage.btnScrollableJobs.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_jobKeyDetails_updateKeyDetailsFormNotSendingOrganisation_idInvalidRequestPage.lnkJobItem));
+        fe_jobKeyDetails_updateKeyDetailsFormNotSendingOrganisation_idInvalidRequestPage.lnkJobItem.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_jobKeyDetails_updateKeyDetailsFormNotSendingOrganisation_idInvalidRequestPage.informationTab));
+        fe_jobKeyDetails_updateKeyDetailsFormNotSendingOrganisation_idInvalidRequestPage.informationTab.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_jobKeyDetails_updateKeyDetailsFormNotSendingOrganisation_idInvalidRequestPage.btnKeyDetailsEdit));
+        fe_jobKeyDetails_updateKeyDetailsFormNotSendingOrganisation_idInvalidRequestPage.btnKeyDetailsEdit.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_jobKeyDetails_updateKeyDetailsFormNotSendingOrganisation_idInvalidRequestPage.txtLocationField));
+        fe_jobKeyDetails_updateKeyDetailsFormNotSendingOrganisation_idInvalidRequestPage.txtLocationField.click();
+
+        wait.until(ExpectedConditions.visibilityOf(fe_jobKeyDetails_updateKeyDetailsFormNotSendingOrganisation_idInvalidRequestPage.txtLocationField_Item));
+        fe_jobKeyDetails_updateKeyDetailsFormNotSendingOrganisation_idInvalidRequestPage.txtLocationField_Item.click();
+    }
+
+    //##################################################FOJ - Add New Role Modal (FOJ Tab)########################################################################
+
+    @When("User navigates to Candidate and Adds New Role Modal FOJ Tab")
+    public void user_navigates_to_candidate_and_adds_new_role_modal_foj_tab() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.candidateItem));
+        foj_addNewRoleModal_fojTabPage.candidateItem.click();
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.careerTab));
+        foj_addNewRoleModal_fojTabPage.careerTab.click();
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.btnCurrentRolesPlus));
+        foj_addNewRoleModal_fojTabPage.btnCurrentRolesPlus.click();
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.txtHowWasTheJobFound_Dropdown));
+        foj_addNewRoleModal_fojTabPage.txtHowWasTheJobFound_Dropdown.click();
+
+        //wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.txtHowWasTheJobFound_Item));
+        //foj_addNewRoleModal_fojTabPage.txtHowWasTheJobFound_Item.click();
+        WebDriverWait wait = new WebDriverWait(driver, 15, 100);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement ele = driver.findElement(By.xpath("//li[@data-testid='direct']"));
+        JavascriptExecutor exe = (JavascriptExecutor)driver;
+        exe.executeScript("arguments[0].click();", ele);
+
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.txtJobTitle_Field));
+        foj_addNewRoleModal_fojTabPage.txtJobTitle_Field.sendKeys("Atomation Tester");
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.positionType_Dropdown));
+        foj_addNewRoleModal_fojTabPage.positionType_Dropdown.click();
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.positionType_Item));
+        foj_addNewRoleModal_fojTabPage.positionType_Item.click();
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.txtRate));
+        foj_addNewRoleModal_fojTabPage.txtRate.sendKeys("111");
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.btnSalaryPeriod));
+        foj_addNewRoleModal_fojTabPage.btnSalaryPeriod.click();
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.btnSalaryPeriod_Item));
+        foj_addNewRoleModal_fojTabPage.btnSalaryPeriod_Item.click();
+
+//        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.availabilityNotice_Dropdown));
+//        foj_addNewRoleModal_fojTabPage.availabilityNotice_Dropdown.click();
+        wait = new WebDriverWait(driver, 15, 100);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement element = driver.findElement(By.xpath("//label[contains(text(), 'Availability/Notice')]"));
+        JavascriptExecutor execute = (JavascriptExecutor)driver;
+        execute.executeScript("arguments[0].click();", element);
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.availabilityNotice_Item));
+        foj_addNewRoleModal_fojTabPage.availabilityNotice_Item.click();
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.updateCandidateStatus_Dropdown));
+        foj_addNewRoleModal_fojTabPage.updateCandidateStatus_Dropdown.click();
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.updateCandidateStatus_Item));
+        foj_addNewRoleModal_fojTabPage.updateCandidateStatus_Item.click();
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.organisationTextField));
+        foj_addNewRoleModal_fojTabPage.organisationTextField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.organisationTextField_Item));
+        foj_addNewRoleModal_fojTabPage.organisationTextField_Item.click();
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.locationTextField));
+        foj_addNewRoleModal_fojTabPage.locationTextField.click();
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.locationTextField_Item));
+        foj_addNewRoleModal_fojTabPage.locationTextField_Item.click();
+
+        //wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.lineManager_TextField));
+        //foj_addNewRoleModal_fojTabPage.lineManager_TextField.sendKeys("Lunga");
+
+//        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.lineManager_TextField_Item));
+//        foj_addNewRoleModal_fojTabPage.lineManager_TextField_Item.click();
+
+//        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.createClientContactRecord_Checkbox));
+//        foj_addNewRoleModal_fojTabPage.createClientContactRecord_Checkbox.click();
+        wait = new WebDriverWait(driver, 15, 100);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement elements = driver.findElement(By.xpath("/html/body/div[2]/div[3]/div/div[2]/div[3]/div[2]/div[4]/div[1]/label/span[1]/span[1]/input"));
+        JavascriptExecutor executes = (JavascriptExecutor)driver;
+        executes.executeScript("arguments[0].click();", elements);
+
+        //wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.btnSubmit));
+        //foj_addNewRoleModal_fojTabPage.btnSubmit.click();
+    }
+
+    //##############################FOJ - Add New Role Modal (New Role Tab)#######################################################################
+
+    @When("User navigates to Candidate record and adds a New Role")
+    public void user_navigates_to_candidate_record_and_adds_a_new_role() {
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.btnOpenSearch));
+        glob_hudPage.btnOpenSearch.click();
+
+        wait.until(ExpectedConditions.visibilityOf(glob_hudPage.txtSearchField));
+        glob_hudPage.txtSearchField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.candidateItem));
+        foj_addNewRoleModal_fojTabPage.candidateItem.click();
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.careerTab));
+        foj_addNewRoleModal_fojTabPage.careerTab.click();
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.btnCurrentRolesPlus));
+        foj_addNewRoleModal_fojTabPage.btnCurrentRolesPlus.click();
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_newRoleTabPage.btnNewRole));
+        foj_addNewRoleModal_newRoleTabPage.btnNewRole.click();
+
+
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.txtJobTitle_Field));
+        foj_addNewRoleModal_fojTabPage.txtJobTitle_Field.sendKeys("Atomation Tester");
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.positionType_Dropdown));
+        foj_addNewRoleModal_fojTabPage.positionType_Dropdown.click();
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.positionType_Item));
+        foj_addNewRoleModal_fojTabPage.positionType_Item.click();
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.txtRate));
+        foj_addNewRoleModal_fojTabPage.txtRate.sendKeys("111");
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.btnSalaryPeriod));
+        foj_addNewRoleModal_fojTabPage.btnSalaryPeriod.click();
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.btnSalaryPeriod_Item));
+        foj_addNewRoleModal_fojTabPage.btnSalaryPeriod_Item.click();
+
+//        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.availabilityNotice_Dropdown));
+//        foj_addNewRoleModal_fojTabPage.availabilityNotice_Dropdown.click();
+        wait = new WebDriverWait(driver, 15, 100);
+        driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
+        WebElement element = driver.findElement(By.xpath("//label[contains(text(), 'Availability/Notice')]"));
+        JavascriptExecutor execute = (JavascriptExecutor)driver;
+        execute.executeScript("arguments[0].click();", element);
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.availabilityNotice_Item));
+        foj_addNewRoleModal_fojTabPage.availabilityNotice_Item.click();
+
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.organisationTextField));
+        foj_addNewRoleModal_fojTabPage.organisationTextField.sendKeys("Lunga");
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.organisationTextField_Item));
+        foj_addNewRoleModal_fojTabPage.organisationTextField_Item.click();
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.locationTextField));
+        foj_addNewRoleModal_fojTabPage.locationTextField.click();
+
+        wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.locationTextField_Item));
+        foj_addNewRoleModal_fojTabPage.locationTextField_Item.click();
+
+
+        //wait.until(ExpectedConditions.visibilityOf(foj_addNewRoleModal_fojTabPage.btnSubmit));
+        //foj_addNewRoleModal_fojTabPage.btnSubmit.click();
+    }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
