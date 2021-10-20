@@ -27,9 +27,9 @@ public class CandidatePersonalUpdateAddressPage {
     WebElement btnChangeAddress;
     By by_of_BtnChangeAddress = By.xpath("//button[@data-testid='change_address_button']");
 
-    By btnCountry_menu = By.id("mui-component-select-country");
+    By btnCountry_menu = By.id("mui-component-select-country_of_residence");
 
-    By btnCountry_menuitem = By.xpath("//li[@data-value='GBR']");
+    By btnCountry_menuitem = By.xpath("//li[contains(text(), 'Afghanistan - AFG')]");
 
 
     By txtAddressLine1 = By.name("address_line_1");

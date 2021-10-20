@@ -22,6 +22,9 @@ public class create_NewCandidatePage extends BasePage {
     @FindBy(xpath = "//*[@data-testid='mobile-contact-option']")
     public WebElement contact_MobileNumber;
 
+    @FindBy(xpath = "//*[@data-testid='mobile-contact-option']")
+    public WebElement contact_LandlineNumber;
+
     @FindBy(xpath = "//*[@data-testid='email-contact-option']")
     public WebElement contact_EmailAddress;
 

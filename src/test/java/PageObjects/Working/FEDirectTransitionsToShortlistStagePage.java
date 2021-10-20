@@ -15,7 +15,7 @@ public class FEDirectTransitionsToShortlistStagePage {
         wait = new WebDriverWait(ldriver,10);
     }
 
-    By lnJobItem = By.xpath("//p[contains(text(), 'LungaAuto')]");
+    By lnJobItem = By.xpath("//p[contains(text(), 'Lunga')]");
 
     By lnkShortList = By.xpath("//h6[contains(text(), 'Short list')]");
 

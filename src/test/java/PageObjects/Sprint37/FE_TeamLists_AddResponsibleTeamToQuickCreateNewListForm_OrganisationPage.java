@@ -17,7 +17,7 @@ public class FE_TeamLists_AddResponsibleTeamToQuickCreateNewListForm_Organisatio
     @CacheLookup
     public WebElement btnCreateOrganisationList;
 
-    @FindBy(xpath = "//li[contains(text(), 'ScrumbleBees')]")
+    @FindBy(xpath = "//li[@data-testid='9b38e8d7-b1fc-447c-84fc-cf6bd1030cc0']")
     @CacheLookup
     public WebElement txtResponsibleTeam_item;
 

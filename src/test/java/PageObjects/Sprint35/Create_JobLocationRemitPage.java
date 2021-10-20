@@ -14,10 +14,13 @@ public class Create_JobLocationRemitPage extends BasePage {
     @FindBy(id = "organisation-lookup")
     public WebElement organisationTextField;
 
-    @FindBy(xpath = "//span[contains(text(), 'Banking • London & 1 other location')]")
+    @FindBy(xpath = "//span[contains(text(), 'Dubai & 5 other locations')]")
     public WebElement organisationTextField_item;
 
-    @FindBy(xpath = "//span[contains(text(), 'Wellington Road, London, GBR')]")
+    @FindBy(id = "location-lookup")
+    public WebElement locationTextField;
+
+    @FindBy(xpath = "//span[contains(text(), 'Gate Building 5, Level 6 DIFC, Dubai, ARE')]")
     public WebElement txtLocation_menuitem;
 
     @FindBy(xpath = "//div[@data-testid='jobStatusDropdown']")

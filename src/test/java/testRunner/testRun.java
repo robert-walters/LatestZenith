@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions
         (
-//                features = ".//Features/Automation",
+                //features = ".//Features/Sprint40",
                 //glue = "stepDefinitions",
                 features = ".//Features/Automation",
                 glue = "StepDefinitions",

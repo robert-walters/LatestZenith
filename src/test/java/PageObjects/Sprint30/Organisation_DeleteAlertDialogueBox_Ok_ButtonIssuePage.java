@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Organisation_DeleteAlertDialogueBox_Ok_ButtonIssuePage extends BasePage {
 
-    @FindBy(xpath = "//span[contains(text(), 'United Kingdom • Live Jobs: 4')]")
+    @FindBy(xpath = "//span[contains(text(), 'United Kingdom • Live Jobs: 3')]")
     @CacheLookup
     public WebElement lnkOrganisationItem;
 
