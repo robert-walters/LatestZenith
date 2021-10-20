@@ -27,11 +27,11 @@ public class FEAndBETransitionToCVSentStageSingleOrMultiPage {
 
     By txtClientContact = By.id("client-lookup");
 
-    @FindBy(xpath = "//span[contains(text(), 'Lunga • Automation Engineer • Johannesburg')]")
+    @FindBy(xpath = "//h6[contains(text(), 'Lunga Lunga')]")
     @CacheLookup
     public WebElement txtClientContactItem;
 
-    By btnSave = By.xpath("//button[@data-testid='transition_to_cv_sentSubmit']");
+    By btnSave = By.xpath("//button[@data-testid='testIdSubmit']");
 
     //###########################################ACTIONS###################################################
 
@@ -62,7 +62,7 @@ public class FEAndBETransitionToCVSentStageSingleOrMultiPage {
     public void setTxtClientContactItem() throws Exception{
         Thread.sleep(3000);
         //WebDriverWait waiting = new WebDriverWait(ldriver, 15, 100);
-        wait.until(ExpectedConditions.visibilityOf(txtClientContactItem));
+        WebDriverWait waiting = new WebDriverWait(ldriver, 15, 100);
         txtClientContactItem.click();
     }
 

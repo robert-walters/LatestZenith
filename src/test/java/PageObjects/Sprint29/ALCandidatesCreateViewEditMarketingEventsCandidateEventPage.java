@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class ALCandidatesCreateViewEditMarketingEventsCandidateEventPage {
+public class >~]lALCandidatesCreateViewEditMarketingEventsCandidateEventPage {
     public WebDriver ldriver;
     public WebDriverWait wait;
 
@@ -17,7 +17,7 @@ public class ALCandidatesCreateViewEditMarketingEventsCandidateEventPage {
 
     By btnActivityTpe_menu = By.xpath("//div[@data-testid='activity-type']");
 
-    By lnkActivityType_menuitem = By.xpath("//span[contains(text(), 'Candidate Event')]");
+    By lnkActivityType_menuitem = By.xpath("//span[contains(text(), 'Spec Digital Passport Sent (ANZ)')]");
 
 
     //###########################################ACTIONS################################################################

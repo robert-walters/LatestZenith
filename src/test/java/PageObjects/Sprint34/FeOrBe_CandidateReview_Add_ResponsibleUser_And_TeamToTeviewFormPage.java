@@ -25,9 +25,9 @@ public class FeOrBe_CandidateReview_Add_ResponsibleUser_And_TeamToTeviewFormPage
     @CacheLookup
     public WebElement txtNotes;
 
-    @FindBy(xpath = "//button[@data-testid='testIdSubmit']")
+    @FindBy(xpath = "//h6[contains(text(), 'Ajesh Jally')]")
     @CacheLookup
-    public WebElement btnCreateCandidateReview;
+    public WebElement txtResponsibleUser_item;
 
 
     public FeOrBe_CandidateReview_Add_ResponsibleUser_And_TeamToTeviewFormPage(WebDriver newDriver, WebDriverWait newWait) {

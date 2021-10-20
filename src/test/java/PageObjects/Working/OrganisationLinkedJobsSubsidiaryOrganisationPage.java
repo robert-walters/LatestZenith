@@ -22,7 +22,7 @@ public class OrganisationLinkedJobsSubsidiaryOrganisationPage {
 
 
 
-    By txtOrganisation_menu = By.id("organisation-lookup");
+    By txtOrganisation_menu = By.xpath("//input[@id='organisation-lookup']");
 
     By txtOrganisation_menuitem = By.xpath("//h6[contains(text(), 'Deutsche Bank AG')]");
 
@@ -47,6 +47,8 @@ public class OrganisationLinkedJobsSubsidiaryOrganisationPage {
     //##########################################################ORGANISATION###########################################
 
     public void setTxtOrganisation_menu(String text) throws Exception{
+        Thread.sleep(3000);
+        WebDriverWait waiting = new WebDriverWait(ldriver, 15, 100);
         ldriver.findElement(txtOrganisation_menu).sendKeys(text);
     }
 

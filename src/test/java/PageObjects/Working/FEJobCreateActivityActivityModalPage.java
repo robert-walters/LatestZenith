@@ -15,6 +15,9 @@ public class FEJobCreateActivityActivityModalPage {
         wait = new WebDriverWait(ldriver,10);
     }
 
+
+    By lnkActivityTab= By.id("scrollable-auto-tab-1");
+
     By btnJobPlus= By.xpath("//button[@data-testid='ActivityTab-Jobs_add_button']");
 
     By btnActivityType_menu = By.xpath("//div[@data-testid='activity-type']");
@@ -24,6 +27,11 @@ public class FEJobCreateActivityActivityModalPage {
 
     //###########################################ACTIONS###################################################
 
+    public void clickLnkActivityTab() throws Exception{
+        Thread.sleep(3000);
+        WebDriverWait waiting = new WebDriverWait(ldriver, 15, 100);
+        ldriver.findElement(lnkActivityTab).click();
+    }
 
     public void clickBtnJobPlus() throws Exception{
         Thread.sleep(3000);

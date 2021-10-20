@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class FEAndBE_JobRecord_AddOrEdit_OtherConsultantsPage extends BasePage {
 
-    @FindBy(xpath = "//p[contains(text(), 'LungaAuto')]")
+    @FindBy(xpath = "//p[contains(text(), 'Lunga')]")
     @CacheLookup
     public WebElement lnkJobItem;
 

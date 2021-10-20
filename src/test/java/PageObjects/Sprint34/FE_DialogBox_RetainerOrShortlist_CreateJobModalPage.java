@@ -17,7 +17,7 @@ public class FE_DialogBox_RetainerOrShortlist_CreateJobModalPage extends BasePag
     @CacheLookup
     public WebElement jobStatus_menuitem;
 
-    @FindBy(xpath = "//span[contains(text(), '162 Anderson Street, Johannesburg, GBR')]")
+    @FindBy(xpath = "//span[contains(text(), '162 Anderson Street, City and Suburban, Johannesburg, GBR')]")
     @CacheLookup
     public WebElement txtLocation_menuitem;
 
